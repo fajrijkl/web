@@ -3,21 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Moh Najikhul Fajri — Personal Website</title>
-  <meta name="description" content="Profil akademik Moh Najikhul Fajri: pengajaran, riset, dan publikasi." />
+  <title>Moh Najikhul Fajri</title>
+  <meta name="description" content="Moh Najikhul Fajri — pengajaran, riset, dan publikasi." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top">Fajri</a>
-
-      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav id="nav" class="nav">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="logo" href="#top">Fajri</a>
+      <nav class="menu" aria-label="Navigasi">
         <a href="#about">Tentang</a>
         <a href="#teaching">Pengajaran</a>
         <a href="#research">Riset</a>
@@ -30,45 +25,36 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-left">
+      <div class="wrap hero-grid">
+        <div class="hero-main">
           <div class="profile">
-            <div class="avatar-wrap">
-              <img
-                class="avatar"
-                src="assets/1742710947719.jpg"
-                alt="Foto profil Moh Najikhul Fajri"
-                loading="eager"
-              />
+            <div class="avatar-ring">
+              <img class="avatar" src="assets/1742710947719.jpg" alt="Foto profil Moh Najikhul Fajri" loading="eager" />
             </div>
 
-            <div class="identity">
+            <div class="who">
               <h1 class="name">Moh Najikhul Fajri</h1>
-              <p class="title">
-                Dosen Ekonomi — FEB UNDIP • Konsultan • Peneliti
-              </p>
+              <p class="role">Dosen Ekonomi — FEB UNDIP • Konsultan • Peneliti</p>
 
-              <div class="chips" aria-label="Bidang minat">
-                <span class="chip">Ekonomi Pembangunan</span>
-                <span class="chip">Ekonomi Industri</span>
-                <span class="chip">Ekonometrika</span>
-                <span class="chip">Kebijakan Publik</span>
+              <div class="tags" aria-label="Bidang minat">
+                <span class="tag">Ekonomi Pembangunan</span>
+                <span class="tag">Ekonomi Industri</span>
+                <span class="tag">Ekonometrika</span>
+                <span class="tag">Kebijakan Publik</span>
               </div>
 
               <div class="actions">
                 <a class="btn primary" href="#contact">Hubungi</a>
-                <a class="btn" href="#publications">Lihat Publikasi</a>
-                <a class="btn" href="assets/cv.pdf">CV (PDF)</a>
+                <a class="btn" href="#publications">Publikasi</a>
+                <a class="btn" href="assets/cv.pdf">CV</a>
               </div>
 
-              <p class="muted small">
-                Foto: <code>assets/1742710947719.jpg</code> (pastikan path & huruf besar-kecil sesuai).
-              </p>
+              <p class="hint">Foto diambil dari <code>assets/1742710947719.jpg</code>.</p>
             </div>
           </div>
 
-          <div class="summary card">
-            <h2 class="section-title">Ringkas</h2>
+          <div class="card">
+            <h2 class="card-title">Ringkas</h2>
             <p>
               Saya berfokus pada riset dan analisis kebijakan ekonomi berbasis data,
               pengajaran, serta pengembangan materi akademik dan publikasi. Silakan
@@ -76,30 +62,18 @@
             </p>
 
             <div class="facts">
-              <div class="fact">
-                <div class="k">Afiliasi</div>
-                <div class="v">FEB UNDIP — IESP</div>
-              </div>
-              <div class="fact">
-                <div class="k">Fokus</div>
-                <div class="v">Pembangunan, IO, Kebijakan</div>
-              </div>
-              <div class="fact">
-                <div class="k">Lokasi</div>
-                <div class="v">Indonesia</div>
-              </div>
-              <div class="fact">
-                <div class="k">Kolaborasi</div>
-                <div class="v">Riset & konsultansi</div>
-              </div>
+              <div class="fact"><span class="k">Afiliasi</span><span class="v">FEB UNDIP — IESP</span></div>
+              <div class="fact"><span class="k">Fokus</span><span class="v">Pembangunan, IO, Kebijakan</span></div>
+              <div class="fact"><span class="k">Lokasi</span><span class="v">Indonesia</span></div>
+              <div class="fact"><span class="k">Kolaborasi</span><span class="v">Riset & konsultansi</span></div>
             </div>
           </div>
         </div>
 
-        <aside class="hero-right">
+        <aside class="hero-side">
           <div class="card">
-            <h2 class="section-title">Highlights</h2>
-            <ul class="list">
+            <h2 class="card-title">Highlights</h2>
+            <ul class="bullets">
               <li>Evaluasi program dan dampak kebijakan berbasis bukti.</li>
               <li>Minat: pasar tenaga kerja, keterampilan, dan tata kelola.</li>
               <li>Pengajaran: Ekonomi Industri, Mikroekonomi, Ekonomi Pembangunan.</li>
@@ -107,13 +81,13 @@
           </div>
 
           <div class="card">
-            <h2 class="section-title">Tautan</h2>
+            <h2 class="card-title">Tautan</h2>
             <ul class="links">
               <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
               <li><a href="#" target="_blank" rel="noopener">Google Scholar</a></li>
               <li><a href="#" target="_blank" rel="noopener">ORCID</a></li>
             </ul>
-            <p class="muted small">Ganti <code>#</code> dengan tautan asli Anda.</p>
+            <p class="hint">Ganti <code>#</code> dengan link asli Anda.</p>
           </div>
         </aside>
       </div>
@@ -121,17 +95,17 @@
 
     <!-- ABOUT -->
     <section id="about" class="section">
-      <div class="container">
+      <div class="wrap">
         <h2 class="h2">Tentang</h2>
         <p class="lead">
-          Tulis bio singkat Anda: latar belakang, fokus riset, dan kontribusi utama.
+          Tulis bio singkat: latar belakang, fokus riset, pengalaman, dan kontribusi utama.
         </p>
       </div>
     </section>
 
     <!-- TEACHING -->
     <section id="teaching" class="section alt">
-      <div class="container">
+      <div class="wrap">
         <h2 class="h2">Pengajaran</h2>
         <div class="grid">
           <article class="tile">
@@ -152,7 +126,7 @@
 
     <!-- RESEARCH -->
     <section id="research" class="section">
-      <div class="container">
+      <div class="wrap">
         <h2 class="h2">Riset & Proyek</h2>
         <div class="grid">
           <article class="tile">
@@ -173,7 +147,7 @@
 
     <!-- PUBLICATIONS -->
     <section id="publications" class="section alt">
-      <div class="container">
+      <div class="wrap">
         <h2 class="h2">Publikasi Terpilih</h2>
 
         <ol class="pubs">
@@ -183,12 +157,10 @@
               <span class="pub-meta">Jurnal, Tahun</span>
             </div>
             <div class="pub-links">
-              <a href="#" target="_blank" rel="noopener">PDF</a>
-              <span aria-hidden="true">·</span>
+              <a href="#" target="_blank" rel="noopener">PDF</a> ·
               <a href="#" target="_blank" rel="noopener">DOI</a>
             </div>
           </li>
-
           <li class="pub">
             <div class="pub-main">
               <span class="pub-title">Judul Paper 2</span>
@@ -200,28 +172,27 @@
           </li>
         </ol>
 
-        <p class="muted small">Tambahkan item publikasi sesuai kebutuhan.</p>
+        <p class="hint">Tambah daftar publikasi sesuai kebutuhan.</p>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section">
-      <div class="container">
+      <div class="wrap">
         <h2 class="h2">Kontak</h2>
-        <div class="contact-grid">
+        <div class="contact">
           <div class="card">
             <h3>Info</h3>
-            <p class="muted">Isi email dan tautan profesional Anda.</p>
             <ul class="contact-list">
-              <li><strong>Email:</strong> <a href="mailto:emailanda@domain.com">emailanda@domain.com</a></li>
-              <li><strong>LinkedIn:</strong> <a href="#" target="_blank" rel="noopener">Profil LinkedIn</a></li>
-              <li><strong>Google Scholar:</strong> <a href="#" target="_blank" rel="noopener">Profil Scholar</a></li>
+              <li><span class="k">Email</span><a class="v" href="mailto:emailanda@domain.com">emailanda@domain.com</a></li>
+              <li><span class="k">LinkedIn</span><a class="v" href="#" target="_blank" rel="noopener">Profil LinkedIn</a></li>
+              <li><span class="k">Google Scholar</span><a class="v" href="#" target="_blank" rel="noopener">Profil Scholar</a></li>
             </ul>
           </div>
 
           <div class="card">
             <h3>CV</h3>
-            <p>Taruh file CV Anda sebagai <code>assets/cv.pdf</code>.</p>
+            <p>Taruh file di <code>assets/cv.pdf</code> untuk tombol CV berfungsi.</p>
             <a class="btn primary" href="assets/cv.pdf">Download CV</a>
           </div>
         </div>
@@ -229,25 +200,15 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
+  <footer class="footer">
+    <div class="wrap footer-inner">
       <span>© <span id="year"></span> Moh Najikhul Fajri</span>
-      <span class="muted">Built with GitHub Pages</span>
+      <span class="muted">GitHub Pages</span>
     </div>
   </footer>
 
   <script>
-    // Tahun otomatis
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobile nav toggle
-    const btn = document.querySelector(".nav-toggle");
-    const nav = document.querySelector("#nav");
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!expanded));
-      nav.classList.toggle("open");
-    });
   </script>
 </body>
 </html>
