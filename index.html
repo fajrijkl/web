@@ -1,214 +1,160 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Moh Najikhul Fajri</title>
-  <meta name="description" content="Moh Najikhul Fajri — pengajaran, riset, dan publikasi." />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Moh Najikhul Fajri</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a class="logo" href="#top">Fajri</a>
-      <nav class="menu" aria-label="Navigasi">
-        <a href="#about">Tentang</a>
-        <a href="#teaching">Pengajaran</a>
-        <a href="#research">Riset</a>
-        <a href="#publications">Publikasi</a>
-        <a href="#contact">Kontak</a>
-      </nav>
-    </div>
+  <!-- Background blobs -->
+  <div class="bg">
+    <span class="blob blob-a"></span>
+    <span class="blob blob-b"></span>
+    <span class="grain"></span>
+  </div>
+
+  <header class="header">
+    <nav class="nav container">
+      <a class="brand" href="#home">
+        <span class="brand-dot"></span>
+        <span>Portfolio<span class="brand-accent">.</span></span>
+      </a>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="menu">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a class="pill" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-main">
-          <div class="profile">
-            <div class="avatar-ring">
-              <img class="avatar" src="assets/1742710947719.jpg" alt="Foto profil Moh Najikhul Fajri" loading="eager" />
-            </div>
+  <main id="home" class="hero container">
+    <!-- Social -->
+    <aside class="social" aria-label="Social links">
+      <a href="https://facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+    </aside>
 
-            <div class="who">
-              <h1 class="name">Moh Najikhul Fajri</h1>
-              <p class="role">Dosen Ekonomi — FEB UNDIP • Konsultan • Peneliti</p>
+    <!-- Left content -->
+    <section class="hero-left">
+      <p class="kicker">Personal Website</p>
 
-              <div class="tags" aria-label="Bidang minat">
-                <span class="tag">Ekonomi Pembangunan</span>
-                <span class="tag">Ekonomi Industri</span>
-                <span class="tag">Ekonometrika</span>
-                <span class="tag">Kebijakan Publik</span>
-              </div>
+      <h1 class="title">
+        Hi, I'm <span class="grad">Moh Najikhul Fajri</span>
+      </h1>
 
-              <div class="actions">
-                <a class="btn primary" href="#contact">Hubungi</a>
-                <a class="btn" href="#publications">Publikasi</a>
-                <a class="btn" href="assets/cv.pdf">CV</a>
-              </div>
+      <h2 class="subtitle">Economist • Lecturer • Policy & Research</h2>
 
-              <p class="hint">Foto diambil dari <code>assets/1742710947719.jpg</code>.</p>
-            </div>
-          </div>
+      <p class="desc">
+        I focus on applied economics, development policy, and data-driven research. I build academic and policy outputs
+        ranging from econometric analysis to dashboards and evidence-based recommendations.
+      </p>
 
-          <div class="card">
-            <h2 class="card-title">Ringkas</h2>
-            <p>
-              Saya berfokus pada riset dan analisis kebijakan ekonomi berbasis data,
-              pengajaran, serta pengembangan materi akademik dan publikasi. Silakan
-              sesuaikan paragraf ini sesuai profil terbaru.
-            </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#contact">
+          <span>Hire Me</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-            <div class="facts">
-              <div class="fact"><span class="k">Afiliasi</span><span class="v">FEB UNDIP — IESP</span></div>
-              <div class="fact"><span class="k">Fokus</span><span class="v">Pembangunan, IO, Kebijakan</span></div>
-              <div class="fact"><span class="k">Lokasi</span><span class="v">Indonesia</span></div>
-              <div class="fact"><span class="k">Kolaborasi</span><span class="v">Riset & konsultansi</span></div>
-            </div>
-          </div>
+        <a class="btn btn-ghost" href="#portfolio">
+          <i class="fa-regular fa-folder-open"></i>
+          <span>View Portfolio</span>
+        </a>
+      </div>
+
+      <div class="mini">
+        <div class="chip">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Semarang, Indonesia</span>
         </div>
-
-        <aside class="hero-side">
-          <div class="card">
-            <h2 class="card-title">Highlights</h2>
-            <ul class="bullets">
-              <li>Evaluasi program dan dampak kebijakan berbasis bukti.</li>
-              <li>Minat: pasar tenaga kerja, keterampilan, dan tata kelola.</li>
-              <li>Pengajaran: Ekonomi Industri, Mikroekonomi, Ekonomi Pembangunan.</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h2 class="card-title">Tautan</h2>
-            <ul class="links">
-              <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
-              <li><a href="#" target="_blank" rel="noopener">Google Scholar</a></li>
-              <li><a href="#" target="_blank" rel="noopener">ORCID</a></li>
-            </ul>
-            <p class="hint">Ganti <code>#</code> dengan link asli Anda.</p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="wrap">
-        <h2 class="h2">Tentang</h2>
-        <p class="lead">
-          Tulis bio singkat: latar belakang, fokus riset, pengalaman, dan kontribusi utama.
-        </p>
-      </div>
-    </section>
-
-    <!-- TEACHING -->
-    <section id="teaching" class="section alt">
-      <div class="wrap">
-        <h2 class="h2">Pengajaran</h2>
-        <div class="grid">
-          <article class="tile">
-            <h3>Ekonomi Industri</h3>
-            <p>IO, SCP, strategi persaingan, efisiensi, struktur pasar.</p>
-          </article>
-          <article class="tile">
-            <h3>Mikroekonomi Lanjutan</h3>
-            <p>Preferensi, duality, Hicksian/Marshallian, keseimbangan.</p>
-          </article>
-          <article class="tile">
-            <h3>Ekonomi Pembangunan</h3>
-            <p>Pertumbuhan, kemiskinan, program publik, evaluasi dampak.</p>
-          </article>
+        <div class="chip">
+          <i class="fa-solid fa-building-columns"></i>
+          <span>FEB UNDIP</span>
         </div>
       </div>
     </section>
 
-    <!-- RESEARCH -->
-    <section id="research" class="section">
-      <div class="wrap">
-        <h2 class="h2">Riset & Proyek</h2>
-        <div class="grid">
-          <article class="tile">
-            <h3>Pasar Tenaga Kerja & Keterampilan</h3>
-            <p>Pelatihan, pemagangan, dan transisi kerja berbasis data survei.</p>
-          </article>
-          <article class="tile">
-            <h3>Evaluasi Kebijakan & Program</h3>
-            <p>Metode kuantitatif (mis. PSM) dan analisis berbasis bukti.</p>
-          </article>
-          <article class="tile">
-            <h3>Governance & Institusi</h3>
-            <p>Kepatuhan, tata kelola, dan implikasi kebijakan publik.</p>
-          </article>
+    <!-- Right content -->
+    <section class="hero-right" aria-label="Profile photo">
+      <div class="avatar-ring">
+        <div class="avatar">
+          <!-- GANTI src sesuai lokasi file fotomu -->
+          <!-- contoh: assets/1742710947719.jpg -->
+          <img src="assets/1742710947719.jpg" alt="Photo profile" />
         </div>
       </div>
-    </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section alt">
-      <div class="wrap">
-        <h2 class="h2">Publikasi Terpilih</h2>
-
-        <ol class="pubs">
-          <li class="pub">
-            <div class="pub-main">
-              <span class="pub-title">Judul Paper 1</span>
-              <span class="pub-meta">Jurnal, Tahun</span>
-            </div>
-            <div class="pub-links">
-              <a href="#" target="_blank" rel="noopener">PDF</a> ·
-              <a href="#" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </li>
-          <li class="pub">
-            <div class="pub-main">
-              <span class="pub-title">Judul Paper 2</span>
-              <span class="pub-meta">Konferensi, Tahun</span>
-            </div>
-            <div class="pub-links">
-              <a href="#" target="_blank" rel="noopener">Link</a>
-            </div>
-          </li>
-        </ol>
-
-        <p class="hint">Tambah daftar publikasi sesuai kebutuhan.</p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="wrap">
-        <h2 class="h2">Kontak</h2>
-        <div class="contact">
-          <div class="card">
-            <h3>Info</h3>
-            <ul class="contact-list">
-              <li><span class="k">Email</span><a class="v" href="mailto:emailanda@domain.com">emailanda@domain.com</a></li>
-              <li><span class="k">LinkedIn</span><a class="v" href="#" target="_blank" rel="noopener">Profil LinkedIn</a></li>
-              <li><span class="k">Google Scholar</span><a class="v" href="#" target="_blank" rel="noopener">Profil Scholar</a></li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>CV</h3>
-            <p>Taruh file di <code>assets/cv.pdf</code> untuk tombol CV berfungsi.</p>
-            <a class="btn primary" href="assets/cv.pdf">Download CV</a>
-          </div>
-        </div>
+      <div class="badge">
+        <span class="dot"></span>
+        <span>Available for collaboration</span>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <span>© <span id="year"></span> Moh Najikhul Fajri</span>
-      <span class="muted">GitHub Pages</span>
-    </div>
-  </footer>
+  <!-- Dummy sections (biar anchor jalan). Boleh kamu isi nanti -->
+  <section id="about" class="section container">
+    <h3>About</h3>
+    <p>Tambahkan ringkasan profil, pengalaman, dan fokus riset/teaching di sini.</p>
+  </section>
+
+  <section id="skills" class="section container">
+    <h3>Skills</h3>
+    <p>Contoh: Econometrics, IO/IRIO, Policy Analysis, Stata, Python, Power BI, LaTeX.</p>
+  </section>
+
+  <section id="portfolio" class="section container">
+    <h3>Portfolio</h3>
+    <p>Masukkan proyek riset, dashboard, publikasi, atau policy brief.</p>
+  </section>
+
+  <section id="contact" class="section container">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:yourmail@domain.com">yourmail@domain.com</a></p>
+  </section>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Mobile menu
+    const btn = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Active link on click (simple)
+    document.querySelectorAll('.menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.querySelectorAll('.menu a').forEach(x => x.classList.remove('active'));
+        a.classList.add('active');
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
   </script>
 </body>
 </html>
