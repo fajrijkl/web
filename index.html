@@ -4,21 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Moh Najikhul Fajri</title>
+  <meta name="description" content="Personal portfolio website." />
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Icons (Font Awesome) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <!-- GitHub Pages-safe (no leading slash) -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Background blobs -->
-  <div class="bg">
+  <!-- Background -->
+  <div class="bg" aria-hidden="true">
     <span class="blob blob-a"></span>
     <span class="blob blob-b"></span>
     <span class="grain"></span>
@@ -26,7 +20,7 @@
 
   <header class="header">
     <nav class="nav container">
-      <a class="brand" href="#home">
+      <a class="brand" href="#home" aria-label="Homepage">
         <span class="brand-dot"></span>
         <span>Portfolio<span class="brand-accent">.</span></span>
       </a>
@@ -35,7 +29,7 @@
         <span></span><span></span><span></span>
       </button>
 
-      <ul class="menu">
+      <ul class="menu" id="menu">
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -48,111 +42,146 @@
   <main id="home" class="hero container">
     <!-- Social -->
     <aside class="social" aria-label="Social links">
-      <a href="https://facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
+      <a class="social-btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <!-- LinkedIn SVG -->
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5ZM.5 23.5h3.98V7.98H.5V23.5ZM8.5 7.98h3.82v2.12h.05c.53-1 1.82-2.12 3.75-2.12 4.01 0 4.75 2.64 4.75 6.07v9.45H16.9v-8.38c0-2-.04-4.57-2.78-4.57-2.78 0-3.2 2.17-3.2 4.42v8.53H8.5V7.98Z"/>
+        </svg>
       </a>
-      <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
+
+      <a class="social-btn" href="https://scholar.google.com/" target="_blank" rel="noreferrer" aria-label="Google Scholar">
+        <!-- Scholar-ish SVG (simple) -->
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2Zm0 14L4.24 11.8 12 16l7.76-4.2L12 16Zm-7 2.5c2.2 1.7 4.6 2.5 7 2.5s4.8-.8 7-2.5V16l-7 3.5L5 16v2.5Z"/>
+        </svg>
       </a>
-      <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin-in"></i>
+
+      <a class="social-btn" href="https://orcid.org/" target="_blank" rel="noreferrer" aria-label="ORCID">
+        <!-- ORCID-ish SVG (simple) -->
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm-5.2 17.6H4.7V7.2h2.1v10.4Zm-.04-12.2c0 .73-.6 1.32-1.33 1.32S4.1 6.13 4.1 5.4s.6-1.32 1.33-1.32 1.33.59 1.33 1.32ZM12.2 17.6H8.8V7.2h3.4c3.02 0 5.2 2.07 5.2 5.2 0 3.12-2.18 5.2-5.2 5.2Zm0-8.6h-1v6.8h1c1.82 0 3.1-1.35 3.1-3.4s-1.28-3.4-3.1-3.4Z"/>
+        </svg>
       </a>
     </aside>
 
-    <!-- Left content -->
+    <!-- Left -->
     <section class="hero-left">
       <p class="kicker">Personal Website</p>
 
       <h1 class="title">
-        Hi, I'm <span class="grad">Moh Najikhul Fajri</span>
+        Hi, I’m <span class="grad">Moh Najikhul Fajri</span>
       </h1>
 
       <h2 class="subtitle">Economist • Lecturer • Policy & Research</h2>
 
       <p class="desc">
-        I focus on applied economics, development policy, and data-driven research. I build academic and policy outputs
-        ranging from econometric analysis to dashboards and evidence-based recommendations.
+        I focus on applied economics, development policy, and data-driven research.
+        I deliver academic and policy outputs—from econometric analysis to dashboards and evidence-based recommendations.
       </p>
 
       <div class="cta">
         <a class="btn btn-primary" href="#contact">
           <span>Hire Me</span>
-          <i class="fa-solid fa-arrow-right"></i>
+          <span class="arrow" aria-hidden="true">→</span>
         </a>
 
         <a class="btn btn-ghost" href="#portfolio">
-          <i class="fa-regular fa-folder-open"></i>
+          <span class="folder" aria-hidden="true">▦</span>
           <span>View Portfolio</span>
         </a>
       </div>
 
       <div class="mini">
-        <div class="chip">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Semarang, Indonesia</span>
-        </div>
-        <div class="chip">
-          <i class="fa-solid fa-building-columns"></i>
-          <span>FEB UNDIP</span>
-        </div>
+        <div class="chip">📍 <span>Semarang, Indonesia</span></div>
+        <div class="chip">🏛️ <span>FEB UNDIP</span></div>
       </div>
     </section>
 
-    <!-- Right content -->
+    <!-- Right -->
     <section class="hero-right" aria-label="Profile photo">
       <div class="avatar-ring">
         <div class="avatar">
-          <!-- GANTI src sesuai lokasi file fotomu -->
-          <!-- contoh: assets/1742710947719.jpg -->
-          <img src="assets/1742710947719.jpg" alt="Photo profile" />
+          <!-- Pastikan file ini ada: repo/assets/1742710947719.jpg -->
+          <img src="assets/1742710947719.jpg" alt="Photo profile" loading="eager" />
         </div>
       </div>
 
       <div class="badge">
-        <span class="dot"></span>
+        <span class="dot" aria-hidden="true"></span>
         <span>Available for collaboration</span>
       </div>
     </section>
   </main>
 
-  <!-- Dummy sections (biar anchor jalan). Boleh kamu isi nanti -->
   <section id="about" class="section container">
     <h3>About</h3>
-    <p>Tambahkan ringkasan profil, pengalaman, dan fokus riset/teaching di sini.</p>
+    <p>
+      Dosen FEB UNDIP dan konsultan kebijakan. Tertarik pada ekonomi pembangunan, ekonomi regional,
+      dan riset berbasis data untuk mendukung pengambilan keputusan.
+    </p>
   </section>
 
   <section id="skills" class="section container">
     <h3>Skills</h3>
-    <p>Contoh: Econometrics, IO/IRIO, Policy Analysis, Stata, Python, Power BI, LaTeX.</p>
+    <div class="cards">
+      <div class="card">Econometrics (Panel, GMM, ARDL/VAR)</div>
+      <div class="card">Input–Output / IRIO Analysis</div>
+      <div class="card">Stata • Python • Power BI</div>
+      <div class="card">LaTeX • Academic Writing</div>
+    </div>
   </section>
 
   <section id="portfolio" class="section container">
     <h3>Portfolio</h3>
-    <p>Masukkan proyek riset, dashboard, publikasi, atau policy brief.</p>
+    <div class="cards">
+      <a class="card linkcard" href="#" aria-label="Project 1">
+        <strong>Research & Policy Brief</strong>
+        <span class="muted">Impact evaluation & evidence-based recommendations.</span>
+      </a>
+      <a class="card linkcard" href="#" aria-label="Project 2">
+        <strong>Economic Dashboard</strong>
+        <span class="muted">Macro/regional indicators with interactive visuals.</span>
+      </a>
+      <a class="card linkcard" href="#" aria-label="Project 3">
+        <strong>Teaching Materials</strong>
+        <span class="muted">Slides, problem sets, and applied examples.</span>
+      </a>
+    </div>
   </section>
 
   <section id="contact" class="section container">
     <h3>Contact</h3>
-    <p>Email: <a href="mailto:yourmail@domain.com">yourmail@domain.com</a></p>
+    <p class="muted">
+      Email: <a class="link" href="mailto:yourmail@domain.com">yourmail@domain.com</a>
+      <br />
+      LinkedIn: <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">Profile</a>
+    </p>
   </section>
 
-  <script>
-    // Mobile menu
-    const btn = document.querySelector('.hamburger');
-    const menu = document.querySelector('.menu');
+  <footer class="footer container">
+    <p class="muted">© <span id="y"></span> Moh Najikhul Fajri — Built for GitHub Pages.</p>
+  </footer>
 
-    btn.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  <script>
+    // Year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const btn = document.querySelector(".hamburger");
+    const menu = document.querySelector(".menu");
+
+    btn.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
-    // Active link on click (simple)
-    document.querySelectorAll('.menu a').forEach(a => {
-      a.addEventListener('click', () => {
-        document.querySelectorAll('.menu a').forEach(x => x.classList.remove('active'));
-        a.classList.add('active');
-        menu.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
+    // Active link + close menu
+    document.querySelectorAll(".menu a").forEach(a => {
+      a.addEventListener("click", () => {
+        document.querySelectorAll(".menu a").forEach(x => x.classList.remove("active"));
+        a.classList.add("active");
+        menu.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
       });
     });
   </script>
