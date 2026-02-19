@@ -1,485 +1,1070 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moh Najikhul Fajri | Portfolio</title>
-  <meta name="description" content="Personal website of Moh Najikhul Fajri — Economist, Lecturer, Policy & Research." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Moh Najikhul Fajri — Economist, Lecturer, Policy & Research" />
+  <title>Moh Najikhul Fajri | Personal Website</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     :root{
-      --bg: #070A12;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.04);
-      --line: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.68);
-      --muted2: rgba(255,255,255,.55);
+      --bg0:#070A14;
+      --bg1:#0B1026;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.085);
+      --border: rgba(255,255,255,.12);
+      --text:#EAF0FF;
+      --muted: rgba(234,240,255,.72);
+      --muted2: rgba(234,240,255,.58);
       --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --r: 18px;
+      --r: 22px;
 
-      --a: #ff3cac;
-      --b: #2b86c5;
-      --c: #7c3aed;
+      --a:#55D6FF;
+      --b:#B66BFF;
+      --c:#FF4FD8;
+
+      --max: 1120px;
     }
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      background:
-        radial-gradient(1200px 900px at 20% 10%, rgba(43,134,197,.22), transparent 60%),
-        radial-gradient(1000px 800px at 80% 50%, rgba(255,60,172,.18), transparent 60%),
-        radial-gradient(900px 800px at 55% 105%, rgba(124,58,237,.16), transparent 55%),
-        var(--bg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 500px at 12% 18%, rgba(85,214,255,.18), transparent 55%),
+        radial-gradient(900px 520px at 88% 30%, rgba(255,79,216,.14), transparent 55%),
+        radial-gradient(1000px 700px at 60% 100%, rgba(182,107,255,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      min-height: 100svh;
       overflow-x:hidden;
     }
 
     a{ color:inherit; text-decoration:none; }
-    .container{ width:min(1100px, 92%); margin-inline:auto; }
+    .container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
 
-    /* subtle noise */
-    .grain{
-      position:fixed; inset:0; pointer-events:none; z-index:-1;
-      opacity:.10;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-      background-size:220px 220px;
-      mix-blend-mode:overlay;
-    }
-
-    /* header */
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(7,10,18,.62);
-      border-bottom: 1px solid var(--line);
-    }
+    /* NAV */
     .nav{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(7,10,20,.78), rgba(7,10,20,.35));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
       display:flex; align-items:center; justify-content:space-between;
       padding: 14px 0;
-      gap: 14px;
+      gap: 16px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight: 850; letter-spacing:.2px;
+      display:flex; align-items:center; gap: 10px;
+      font-weight: 900;
+      letter-spacing: .2px;
+      user-select:none;
     }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: linear-gradient(135deg, var(--a), var(--b));
-      box-shadow: 0 0 20px rgba(43,134,197,.45);
+    .brand .dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--a), var(--c));
+      box-shadow: 0 0 24px rgba(255,79,216,.45);
     }
-    .menu{
-      display:flex; gap: 22px; align-items:center;
-      list-style:none; padding:0; margin:0;
-      color: var(--muted);
-      font-weight: 650;
-    }
-    .menu a{ padding: 10px 10px; border-radius:999px; transition: 140ms ease; }
-    .menu a:hover{ color: var(--text); background: rgba(255,255,255,.05); }
-    .menu a.active{ color: var(--text); background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); }
 
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      font-weight: 800;
-      transition: 140ms ease;
+    .navlinks{
+      display:flex; align-items:center; gap: 10px;
+      font-weight: 650;
+      color: var(--muted);
     }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.22); }
+    .navlinks a{
+      padding: 10px 10px;
+      border-radius: 12px;
+      transition: .2s ease;
+    }
+    .navlinks a:hover{
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+    }
+
+    .nav-cta{
+      display:flex; align-items:center; gap: 10px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 800;
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      cursor:pointer;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.20); }
     .btn.primary{
       border: none;
-      background: linear-gradient(90deg, var(--a), var(--b));
-      box-shadow: 0 14px 45px rgba(43,134,197,.12);
+      background: linear-gradient(135deg, var(--c), var(--a));
+      color: #081022;
     }
+    .btn.primary:hover{ transform: translateY(-1px) scale(1.01); }
 
     .hamburger{
       display:none;
-      width:46px; height:42px;
+      width: 44px;
+      height: 44px;
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
+      background: rgba(255,255,255,.06);
       cursor:pointer;
       padding: 10px 12px;
     }
     .hamburger span{
-      display:block; height:2px; border-radius:99px;
-      background: rgba(255,255,255,.86);
+      display:block;height:2px;border-radius:99px;background:rgba(255,255,255,.86);
     }
     .hamburger span+span{ margin-top:7px; }
 
-    /* hero */
+    /* HERO */
     .hero{
-      padding: 42px 0 28px;
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 26px;
-      align-items:center;
-      min-height: calc(100vh - 70px);
+      padding: 56px 0 26px;
     }
-
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 36px;
+      align-items:center;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       padding: 8px 12px;
-      border-radius:999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
       color: var(--muted);
       font-weight: 700;
-      width: fit-content;
+      margin-bottom: 16px;
     }
-    .kicker{ margin: 0 0 10px; color: var(--muted2); font-weight: 750; letter-spacing:.5px; }
     h1{
-      margin: 0;
-      font-size: clamp(34px, 4.6vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -0.7px;
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.02;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
     }
-    .grad{
-      background: linear-gradient(90deg, rgba(255,60,172,1), rgba(43,134,197,1));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-    }
-    h2{
-      margin: 10px 0 14px;
-      font-size: clamp(18px, 2.1vw, 22px);
-      color: rgba(255,255,255,.88);
-      font-weight: 850;
-    }
-    .desc{
-      margin: 0 0 20px;
+    .subtitle{
+      font-size: clamp(16px, 1.65vw, 18px);
       color: var(--muted);
-      line-height: 1.7;
-      max-width: 62ch;
+      line-height: 1.75;
+      margin: 0 0 18px;
+      max-width: 70ch;
     }
-    .cta{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-    .meta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
-
-    /* right card */
-    .hero-card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    .roles{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      margin: 6px 0 16px;
+    }
+    .pill{
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(234,240,255,.86);
+      font-weight: 850;
+      font-size: 12.5px;
+      white-space: nowrap;
+    }
+    .hero-actions{
+      display:flex; flex-wrap:wrap; gap: 12px;
+      margin-top: 18px;
+    }
+    .meta{
+      display:flex; flex-wrap:wrap; gap: 12px;
+      margin-top: 16px;
+      color: var(--muted2);
+      font-weight: 650;
+    }
+    .meta span{
+      display:inline-flex; align-items:center; gap: 8px;
+      padding: 8px 10px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
       border: 1px solid rgba(255,255,255,.10);
-      border-radius: 24px;
-      padding: 18px;
+    }
+
+    /* Social rail */
+    .social-rail{
+      position: fixed;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 40;
+    }
+    .sbtn{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      box-shadow: 0 12px 34px rgba(0,0,0,.25);
+      transition: transform .18s ease, background .18s ease;
+    }
+    .sbtn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
+    .sbtn .fa-linkedin-in{ color: #9bd3ff; }
+    .sbtn .fa-graduation-cap{ color: #d8eeff; }
+    .sbtn .fa-orcid{ color: #b6ffca; }
+    .sbtn .fa-envelope{ color: #ffd2fb; }
+
+    /* Profile */
+    .profile{
+      display:grid;
+      place-items:center;
+      justify-self:end;
+      width: min(380px, 100%);
+    }
+    .panel{
+      width: 100%;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
       box-shadow: var(--shadow);
+      padding: 16px 16px 18px;
       position: relative;
       overflow:hidden;
     }
-    .hero-card::before{
+    .panel::before{
       content:"";
       position:absolute; inset:-2px;
-      background: radial-gradient(600px 400px at 20% 0%, rgba(43,134,197,.20), transparent 55%),
-                  radial-gradient(600px 400px at 90% 80%, rgba(255,60,172,.18), transparent 55%);
-      z-index:0;
+      background: radial-gradient(600px 400px at 20% 0%, rgba(85,214,255,.18), transparent 55%),
+                  radial-gradient(600px 420px at 90% 80%, rgba(255,79,216,.14), transparent 55%);
       pointer-events:none;
+      z-index:0;
     }
-    .hero-card > *{ position:relative; z-index:1; }
+    .panel > *{ position:relative; z-index:1; }
 
-    .avatar-wrap{
-      width: min(340px, 70vw);
+    .ring{
+      width: min(340px, 86vw);
       aspect-ratio: 1/1;
-      margin: 6px auto 14px;
       border-radius: 999px;
       padding: 10px;
-      background:
-        radial-gradient(closest-side, rgba(7,10,18,.90) 72%, transparent 73%),
-        conic-gradient(from 210deg, var(--a), var(--c), var(--b), var(--a));
-      box-shadow: 0 0 0 1px rgba(255,255,255,.10), 0 20px 70px rgba(0,0,0,.55);
-      position: relative;
-    }
-    .avatar-wrap::after{
-      content:"";
-      position:absolute; inset:-10px;
-      border-radius: 999px;
-      background: conic-gradient(from 210deg, rgba(255,60,172,.55), rgba(124,58,237,.55), rgba(43,134,197,.55), rgba(255,60,172,.55));
-      filter: blur(18px);
-      opacity:.50;
-      z-index:-1;
+      background: conic-gradient(from 220deg, var(--a), var(--b), var(--c), var(--a));
+      box-shadow: 0 25px 80px rgba(0,0,0,.55);
+      margin: 6px auto 14px;
     }
     .avatar{
-      width:100%; height:100%;
+      width: 100%;
+      height: 100%;
       border-radius: 999px;
+      background: rgba(0,0,0,.22);
+      border: 1px solid rgba(255,255,255,.18);
       overflow:hidden;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
     }
     .avatar img{
       width:100%; height:100%;
       object-fit: cover;
       object-position: center 18%;
-      transform: scale(1.02);
-      filter: contrast(1.06) saturate(1.05);
+      transform: scale(1.03);
+      filter: contrast(1.03) saturate(1.04);
       display:block;
     }
 
-    .status{
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
-      margin-top: 10px;
+    .badges{
+      display:flex; flex-wrap:wrap;
+      gap: 10px;
+      justify-content:center;
+      margin-top: 4px;
     }
     .badge{
       display:inline-flex; align-items:center; gap:10px;
       padding: 10px 12px;
       border-radius: 999px;
       background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-      color: rgba(255,255,255,.82);
-      font-weight: 800;
-      font-size: 13px;
-    }
-    .green{
-      width:10px; height:10px; border-radius:999px;
-      background: #4eff96;
-      box-shadow: 0 0 16px rgba(78,255,150,.55);
-    }
-
-    .social{
-      display:flex; gap:10px; flex-wrap:wrap;
-      justify-content:center;
-      margin-top: 10px;
-    }
-    .iconbtn{
-      width:42px; height:42px;
-      display:grid; place-items:center;
-      border-radius: 14px;
-      background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.88);
-      transition: 140ms ease;
+      color: rgba(234,240,255,.86);
+      font-weight: 900;
+      font-size: 12.5px;
+      white-space: nowrap;
     }
-    .iconbtn:hover{
-      transform: translateY(-2px);
-      border-color: rgba(255,255,255,.22);
-      box-shadow: 0 16px 42px rgba(0,0,0,.35);
+    .greenDot{
+      width:10px;height:10px;border-radius:999px;background:#4eff96;
+      box-shadow:0 0 16px rgba(78,255,150,.55);
     }
-    svg{ display:block; }
 
-    /* sections */
-    section.block{
-      padding: 54px 0;
-      border-top: 1px solid rgba(255,255,255,.08);
+    /* Sections */
+    section{ padding: 22px 0; }
+    .section-head{
+      display:flex; align-items:end; justify-content:space-between;
+      gap: 16px;
+      margin: 18px 0 12px;
     }
-    .grid{
+    .section-head h2{
+      margin:0;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      line-height:1.65;
+      max-width: 80ch;
+    }
+
+    .grid-2{
       display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 12px;
-      margin-top: 14px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 12px;
     }
     .card{
-      padding: 14px 14px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
       border-radius: var(--r);
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.10);
-      color: rgba(255,255,255,.82);
-      line-height: 1.5;
-      transition: 140ms ease;
+      box-shadow: var(--shadow);
+      padding: 16px;
     }
-    .card:hover{
-      transform: translateY(-2px);
-      border-color: rgba(255,255,255,.20);
-      box-shadow: 0 16px 44px rgba(0,0,0,.35);
-    }
-    .card strong{ display:block; margin-bottom:6px; color: rgba(255,255,255,.92); }
-    .muted{ color: var(--muted); }
-
-    footer{
-      padding: 28px 0 40px;
-      border-top: 1px solid rgba(255,255,255,.08);
+    .card strong{ display:block; margin-bottom: 8px; }
+    .card p{ margin:0; color: var(--muted); line-height: 1.7; }
+    .list{
+      margin:0;
+      padding-left: 18px;
       color: var(--muted);
+      line-height: 1.75;
+    }
+    .list li{ margin: 6px 0; }
+
+    /* Publications */
+    .pub-controls{
+      display:flex; gap: 10px; flex-wrap:wrap;
+      margin: 10px 0 14px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .search{
+      flex: 1 1 260px;
+      display:flex; align-items:center; gap:10px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding: 10px 12px;
+      min-width: 240px;
+    }
+    .search input{
+      width:100%;
+      background: transparent;
+      border:none;
+      outline:none;
+      color: var(--text);
+      font-weight: 650;
+      font-size: 14px;
+    }
+    .search input::placeholder{ color: rgba(234,240,255,.45); }
+    .chips{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .chip{
+      padding: 9px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: rgba(234,240,255,.86);
+      font-weight: 900;
+      font-size: 12px;
+      cursor:pointer;
+      transition: .15s ease;
+      user-select:none;
+    }
+    .chip.active{
+      background: linear-gradient(135deg, rgba(255,79,216,.25), rgba(85,214,255,.18));
+      border-color: rgba(255,255,255,.22);
     }
 
-    /* responsive */
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; padding-top: 26px; }
-      .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .pub-list{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .pub{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius: 18px;
+      padding: 14px 14px;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items:start;
+    }
+    .pub h3{
+      margin:0 0 6px;
+      font-size: 15px;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+    .pub .meta2{
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .pub .meta2 b{ color: rgba(234,240,255,.9); }
+    .pub .links{
+      display:flex;
+      gap: 8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+      min-width: 250px;
+    }
+    .tag{
+      font-size: 12px;
+      font-weight: 900;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: rgba(234,240,255,.86);
+      white-space:nowrap;
+    }
+    .linkbtn{
+      font-size: 12px;
+      font-weight: 900;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      transition: .15s ease;
+      white-space:nowrap;
+    }
+    .linkbtn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
+
+    /* Footer */
+    footer{
+      padding: 26px 0 40px;
+      color: rgba(234,240,255,.55);
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top: 22px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1080px){
+      .social-rail{ display:none; }
+    }
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .profile{ justify-self:start; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .pub{ grid-template-columns: 1fr; }
+      .pub .links{ justify-content:flex-start; min-width: auto; }
+      .nav-cta{ display:none; }
     }
     @media (max-width: 720px){
       .hamburger{ display:inline-block; }
-      .menu{
+      .navlinks{
         position:absolute;
-        right:4%;
-        top:68px;
-        width:min(340px, 92vw);
-        padding: 12px;
-        border-radius: 18px;
-        background: rgba(7,10,18,.78);
-        border: 1px solid rgba(255,255,255,.12);
-        backdrop-filter: blur(14px);
+        right:20px;
+        top:64px;
+        display:none;
+        width: min(360px, calc(100% - 40px));
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
-        display:none;
+        padding: 12px;
+        border-radius: 18px;
+        background: rgba(7,10,20,.82);
+        border: 1px solid rgba(255,255,255,.12);
+        backdrop-filter: blur(12px);
       }
-      .menu.open{ display:flex; }
-      .menu a{ border-radius: 14px; border:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); }
-      .grid{ grid-template-columns: 1fr; }
+      .navlinks.open{ display:flex; }
+      .navlinks a{ background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); }
     }
   </style>
 </head>
 
 <body>
-  <div class="grain" aria-hidden="true"></div>
+  <!-- Social rail -->
+  <aside class="social-rail" aria-label="Social links">
+    <a class="sbtn" href="https://www.linkedin.com/in/moh-najikhul-fajri/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <a class="sbtn" href="https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" target="_blank" rel="noopener" aria-label="Google Scholar">
+      <i class="fa-solid fa-graduation-cap"></i>
+    </a>
+    <a class="sbtn" href="https://orcid.org/0000-0002-6907-8784" target="_blank" rel="noopener" aria-label="ORCID">
+      <i class="fa-brands fa-orcid"></i>
+    </a>
+    <a class="sbtn" href="mailto:fajrijikhul@lecturer.undip.ac.id" aria-label="Email">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+  </aside>
 
-  <header>
-    <nav class="nav container">
-      <a class="brand" href="#home">
-        <span class="dot"></span>
-        <span>Portfolio<span style="opacity:.85">.</span></span>
-      </a>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Portfolio</span>
+      </div>
 
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="ham">
         <span></span><span></span><span></span>
       </button>
 
-      <ul class="menu" id="menu">
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#focus">Focus</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a class="btn primary" href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+      <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#community">Community</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-  <main id="home" class="container hero">
-    <div>
-      <div class="pill">👋 <span>Personal Website</span></div>
-      <p class="kicker">Evidence-based • Data-driven • Impact-oriented</p>
-
-      <h1>Hi, I’m <span class="grad">Moh Najikhul Fajri</span></h1>
-      <h2>Economist • Lecturer • Policy & Research</h2>
-
-      <p class="desc">
-        I focus on applied economics, development policy, and data-driven research.
-        I deliver academic and policy outputs—econometric analysis, dashboards, and evidence-based recommendations.
-      </p>
-
-      <div class="cta">
-        <a class="btn primary" href="#contact">Hire / Collaborate →</a>
-        <a class="btn" href="#works">View Selected Works</a>
-      </div>
-
-      <div class="meta">
-        <div class="pill">📍 Semarang, Indonesia</div>
-        <div class="pill">🏛️ FEB UNDIP</div>
+      <div class="nav-cta">
+        <a class="btn" href="mailto:fajrijikhul@lecturer.undip.ac.id"><i class="fa-regular fa-paper-plane"></i> Email</a>
+        <a class="btn primary" href="#publications"><i class="fa-solid fa-book"></i> Papers</a>
       </div>
     </div>
+  </header>
 
-    <div class="hero-card">
-      <div class="avatar-wrap">
-        <div class="avatar">
-          <!-- Ganti path jika nama file berbeda -->
-          <img src="assets/1742710947719.jpg" alt="Photo profile" />
+  <!-- HERO -->
+  <main id="home" class="container hero">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker"><i class="fa-solid fa-sparkles"></i> Personal Website</div>
+        <h1>Hi, I’m Moh Najikhul Fajri</h1>
+
+        <div class="roles">
+          <span class="pill">Economist</span>
+          <span class="pill">Lecturer (FEB UNDIP)</span>
+          <span class="pill">Policy & Research</span>
+        </div>
+
+        <p class="subtitle">
+          Saya berfokus pada ekonomi terapan, kebijakan pembangunan, dan riset berbasis data.
+          Output yang saya hasilkan mencakup publikasi ilmiah, analisis ekonometrika/spasial, serta rekomendasi kebijakan berbasis bukti.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:fajrijikhul@lecturer.undip.ac.id"><i class="fa-solid fa-handshake"></i> Hire / Collaborate</a>
+          <a class="btn" href="#publications"><i class="fa-solid fa-arrow-right"></i> View Publications</a>
+        </div>
+
+        <div class="meta">
+          <span><i class="fa-solid fa-envelope"></i> fajrijikhul@lecturer.undip.ac.id</span>
+          <span><i class="fa-solid fa-building-columns"></i> FEB UNDIP</span>
         </div>
       </div>
 
-      <div class="status">
-        <div class="badge"><span class="green"></span>Available for collaboration</div>
-        <div class="badge">Policy • Research • Teaching</div>
-      </div>
+      <div class="profile" aria-label="Profile">
+        <div class="panel">
+          <div class="ring" aria-hidden="true">
+            <div class="avatar">
+              <!-- Pastikan file foto ada di: assets/1742710947719.jpg -->
+              <img src="assets/1742710947719.jpg" alt="Moh Najikhul Fajri portrait" />
+            </div>
+          </div>
 
-      <div class="social" aria-label="Social links">
-        <a class="iconbtn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5ZM.5 23.5h3.98V7.98H.5V23.5ZM8.5 7.98h3.82v2.12h.05c.53-1 1.82-2.12 3.75-2.12 4.01 0 4.75 2.64 4.75 6.07v9.45H16.9v-8.38c0-2-.04-4.57-2.78-4.57-2.78 0-3.2 2.17-3.2 4.42v8.53H8.5V7.98Z"/>
-          </svg>
-        </a>
+          <div class="badges">
+            <span class="badge"><span class="greenDot" aria-hidden="true"></span> Available for collaboration</span>
+            <span class="badge">Bappenas • Asian Development Bank</span>
+          </div>
 
-        <a class="iconbtn" href="https://scholar.google.com/" target="_blank" rel="noreferrer" aria-label="Google Scholar">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2Zm0 14L4.24 11.8 12 16l7.76-4.2L12 16Zm-7 2.5c2.2 1.7 4.6 2.5 7 2.5s4.8-.8 7-2.5V16l-7 3.5L5 16v2.5Z"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn" href="https://orcid.org/" target="_blank" rel="noreferrer" aria-label="ORCID">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm-5.2 17.6H4.7V7.2h2.1v10.4Zm-.04-12.2c0 .73-.6 1.32-1.33 1.32S4.1 6.13 4.1 5.4s.6-1.32 1.33-1.32 1.33.59 1.33 1.32ZM12.2 17.6H8.8V7.2h3.4c3.02 0 5.2 2.07 5.2 5.2 0 3.12-2.18 5.2-5.2 5.2Zm0-8.6h-1v6.8h1c1.82 0 3.1-1.35 3.1-3.4s-1.28-3.4-3.1-3.4Z"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn" href="mailto:yourmail@domain.com" aria-label="Email">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
-          </svg>
-        </a>
+          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:12px;">
+            <a class="btn" href="https://www.linkedin.com/in/moh-najikhul-fajri/" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a class="btn" href="https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" target="_blank" rel="noopener">
+              <i class="fa-solid fa-graduation-cap"></i> Scholar
+            </a>
+            <a class="btn" href="https://orcid.org/0000-0002-6907-8784" target="_blank" rel="noopener">
+              <i class="fa-brands fa-orcid"></i> ORCID
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-head">
+        <div>
+          <h2>About</h2>
+          <p>
+            Dosen di FEB UNDIP dan ekonom terapan yang bekerja pada topik pembangunan regional, efisiensi pembangunan hijau/biru,
+            transformasi digital, stabilitas perbankan, serta evaluasi program sosial. Saat ini juga berperan sebagai
+            <b>Penasihat Ahli Kementerian Bappenas</b> dan <b>Konsultan di Asian Development Bank</b>.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <strong>Research Interests</strong>
+          <p>Green development efficiency, fiscal decentralization, digital transformation, banking stability, welfare & social programs.</p>
+        </div>
+        <div class="card">
+          <strong>Methods</strong>
+          <p>Econometrics, spatial analysis, impact evaluation, evidence synthesis, and policy analytics.</p>
+        </div>
+        <div class="card">
+          <strong>Outputs</strong>
+          <p>Journal articles, conference papers, policy notes, and data products (dashboards & applied analytics).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="section-head">
+        <div>
+          <h2>Publications</h2>
+          <p>Daftar paper pilihan. Gunakan search + filter tahun.</p>
+        </div>
+      </div>
+
+      <div class="pub-controls">
+        <div class="search" role="search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input id="q" type="search" placeholder="Search title / journal / year..." autocomplete="off" />
+        </div>
+
+        <div class="chips" aria-label="Filters">
+          <span class="chip active" data-year="all">All</span>
+          <span class="chip" data-year="2025">2025</span>
+          <span class="chip" data-year="2024">2024</span>
+          <span class="chip" data-year="2023">2023</span>
+          <span class="chip" data-year="2022">2022</span>
+        </div>
+      </div>
+
+      <div id="pubList" class="pub-list" aria-live="polite"></div>
+
+      <div style="margin-top:12px; color: var(--muted2); font-size:13px; line-height:1.65;">
+        <b>Catatan:</b> Link DOI/Publisher/PDF di bawah ini saya isi berdasarkan template umum. Jika ada link yang ingin Anda pastikan akurat,
+        cukup kirim URL resminya (DOI/publisher/PDF) dan saya update.
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching">
+      <div class="section-head">
+        <div>
+          <h2>Teaching</h2>
+          <p>Daftar mata kuliah yang diajarkan.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <strong>Pengajaran</strong>
+          <ol class="list">
+            <li>Pengantar Teori Ekonomi Mikro</li>
+            <li>Pengantar Teori Ekonomi Makro</li>
+            <li>Matematika Ekonomi I</li>
+            <li>Teori Ekonomi Mikro I</li>
+            <li>Teori Ekonomi Makro I</li>
+            <li>Ekonometrika I</li>
+            <li>Ekonometrika II</li>
+            <li>Ekonomi Industri I</li>
+            <li>Ekonomi Moneter I</li>
+            <li>Ekonomi Internasional I</li>
+            <li>Ekonomi Pembangunan II</li>
+            <li>Ekonomi Moneter Internasional</li>
+            <li>Perekonomian Indonesia</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <strong>Academic Focus</strong>
+          <p>
+            Materi pengajaran menekankan kombinasi konsep inti ekonomi, metode kuantitatif, serta aplikasi empiris untuk
+            analisis kebijakan dan isu pembangunan.
+          </p>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <span class="pill">Micro & Macro</span>
+            <span class="pill">Math Econ</span>
+            <span class="pill">Econometrics</span>
+            <span class="pill">Industrial Org</span>
+            <span class="pill">International</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section id="community">
+      <div class="section-head">
+        <div>
+          <h2>Community Empowerment</h2>
+          <p>Kegiatan pemberdayaan masyarakat yang dilakukan.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <strong>Pemberdayaan Masyarakat</strong>
+          <ul class="list">
+            <li>Analisis Game Theory — SMAN 1 Bangil dan Taruna Madani</li>
+            <li>Pemberdayaan UMKM — Desa Pereng, Klaten, Jawa Tengah</li>
+            <li>Pemberdayaan Ekonomi Pesantren</li>
+            <li>Pemberdayaan dan Manajemen Karir Terpadu</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Approach</strong>
+          <p>
+            Pendekatan yang digunakan mencakup pendampingan, pelatihan berbasis kasus, penguatan tata kelola, serta
+            strategi keberlanjutan (sustainability) untuk dampak jangka panjang.
+          </p>
+        </div>
+
+        <div class="card">
+          <strong>Current Roles</strong>
+          <p>
+            <b>Penasihat Ahli</b> di Kementerian Bappenas dan <b>Konsultan</b> di Asian Development Bank
+            sebagai bagian dari dukungan analisis kebijakan dan penguatan pembangunan.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-head">
+        <div>
+          <h2>Contact</h2>
+          <p>Untuk kolaborasi riset, konsultasi kebijakan, atau undangan mengajar/berbicara.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <strong>Email</strong>
+          <p>
+            <a class="linkbtn" href="mailto:fajrijikhul@lecturer.undip.ac.id">
+              <i class="fa-regular fa-envelope"></i> fajrijikhul@lecturer.undip.ac.id
+            </a>
+          </p>
+        </div>
+        <div class="card">
+          <strong>LinkedIn</strong>
+          <p>
+            <a class="linkbtn" href="https://www.linkedin.com/in/moh-najikhul-fajri/" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin"></i> moh-najikhul-fajri
+            </a>
+          </p>
+        </div>
+        <div class="card">
+          <strong>Google Scholar / ORCID</strong>
+          <p style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="linkbtn" href="https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" target="_blank" rel="noopener">
+              <i class="fa-solid fa-graduation-cap"></i> Scholar
+            </a>
+            <a class="linkbtn" href="https://orcid.org/0000-0002-6907-8784" target="_blank" rel="noopener">
+              <i class="fa-brands fa-orcid"></i> ORCID
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        © <span id="year"></span> Moh Najikhul Fajri · Built for GitHub Pages
+      </div>
+    </footer>
   </main>
 
-  <section id="about" class="block">
-    <div class="container">
-      <h2 style="margin:0 0 6px;">About</h2>
-      <p class="muted" style="margin:0; line-height:1.75; max-width:80ch;">
-        Dosen FEB UNDIP dan konsultan kebijakan. Fokus pada ekonomi pembangunan, ekonomi regional,
-        dan riset berbasis data untuk mendukung pengambilan keputusan dan dampak kebijakan.
-      </p>
-    </div>
-  </section>
-
-  <section id="focus" class="block">
-    <div class="container">
-      <h2 style="margin:0 0 6px;">Focus</h2>
-      <p class="muted" style="margin:0;">Bidang kerja yang paling sering saya tangani.</p>
-
-      <div class="grid">
-        <div class="card"><strong>Applied Econometrics</strong><span class="muted">Panel, GMM, ARDL/VAR, causal inference.</span></div>
-        <div class="card"><strong>Regional & Development</strong><span class="muted">Interregional analysis, poverty, productivity, jobs.</span></div>
-        <div class="card"><strong>Policy Analytics</strong><span class="muted">Evidence synthesis, evaluation, and recommendations.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="works" class="block">
-    <div class="container">
-      <h2 style="margin:0 0 6px;">Selected Works</h2>
-      <p class="muted" style="margin:0;">Isi link proyek/publikasi kamu di sini nanti.</p>
-
-      <div class="grid">
-        <a class="card" href="#"><strong>Policy Brief</strong><span class="muted">Ringkasan kebijakan + implikasi.</span></a>
-        <a class="card" href="#"><strong>Economic Dashboard</strong><span class="muted">Kompilasi indikator + visualisasi.</span></a>
-        <a class="card" href="#"><strong>Teaching Materials</strong><span class="muted">Slides, problem sets, applied examples.</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="block">
-    <div class="container">
-      <h2 style="margin:0 0 6px;">Contact</h2>
-      <p class="muted" style="margin:0; line-height:1.8;">
-        Email: <a class="btn" href="mailto:yourmail@domain.com" style="display:inline-flex;">yourmail@domain.com</a>
-        <br/>
-        LinkedIn / Scholar / ORCID: silakan ganti link pada tombol ikon di bagian atas.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p style="margin:0;">© <span id="y"></span> Moh Najikhul Fajri — Built for GitHub Pages.</p>
-    </div>
-  </footer>
-
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // ====== MOBILE NAV ======
+    const ham = document.getElementById("ham");
+    const navlinks = document.getElementById("navlinks");
+    if (ham && navlinks) {
+      ham.addEventListener("click", () => {
+        const open = navlinks.classList.toggle("open");
+        ham.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      navlinks.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", () => navlinks.classList.remove("open"));
+      });
+    }
 
-    const btn = document.querySelector(".hamburger");
-    const menu = document.getElementById("menu");
+    // ====== PUBLICATIONS DATA ======
+    // Anda bisa update link DOI/Publisher/PDF per item.
+    const publications = [
+      {
+        title: "Fiscal Decentralization and Green Development Efficiency: Evidence From the New Capital “Nusantara” Buffer Zone",
+        authors: "MN Fajri, BP Pratama, A Kharisudin",
+        venue: "Bestuurskunde: Journal of Governmental Studies, 3(2), 103–115",
+        year: 2023,
+        cited: 11,
+        links: [
+          // GANTI jika punya link resmi yang pasti
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "The Effects of Social Assistance Programs on Stunting Prevalence Rates in Indonesia",
+        authors: "S Munawaroh, MN Fajri, SR Ajija",
+        venue: "Jurnal Administrasi Kesehatan Indonesia, 12(1), 74–85",
+        year: 2024,
+        cited: 9,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Regional Branding as an Effort to Promote a Sustainable Environment",
+        authors: "S Munawaroh, MN Fajri",
+        venue: "Jurnal Bina Praja, 15(1), 73–83",
+        year: 2023,
+        cited: 7,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Kekuatan Pasar dan Stabilitas Dualisme Bank Perkreditan Rakyat Akibat Penetrasi Teknologi Finansial",
+        authors: "MN Fajri",
+        venue: "Jurnal Persaingan Usaha, 2(2), 147–157",
+        year: 2022,
+        cited: 5,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Exploring sustainable economic growth: Promoting green development productivity through decentralized environmental policy and regional competitiveness",
+        authors: "MN Fajri, S Munawaroh",
+        venue: "The Journal of Indonesia Sustainable Development Planning, 4(3), 246–262",
+        year: 2023,
+        cited: 4,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "The effect of religiosity level on entrepreneurial sustainability of Muslim millennials: A case study of the Indonesian family life survey",
+        authors: "MN Fajri, S Munawaroh",
+        venue: "Review of Islamic Social Finance and Entrepreneurship, 103–116",
+        year: 2023,
+        cited: 3,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Does Switching Cost Affect Dual Rural Banks Market Power?",
+        authors: "MN Fajri, R Purwono",
+        venue: "Journal of Developing Economies, 7(2), 251–265",
+        year: 2022,
+        cited: 3,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Spatial analysis of digital transformation on food security in Sumatra: Amidst climate change",
+        authors: "MN Fajri, BP Pratama, FA Wulandari",
+        venue: "Jurnal Ilmu Ekonomi Terapan, 10(1), 25–43",
+        year: 2025,
+        cited: 2,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Strategy To Support SDGs: Spatial Analysis of Digital Transformation and Regional Government Competition on Green Development Efficiency in East Java",
+        authors: "MN Fajri",
+        venue: "East Java Economic Journal, 7(2), 173–195",
+        year: 2023,
+        cited: 2,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "How are people’s business credit and internet marketing navigate micro and small industry performance during covid-19?: Evidence from central java province",
+        authors: "BO Prasetya, MN Fajri",
+        venue: "Business Management Analysis Journal (BMAJ), 6(2), 130–147",
+        year: 2023,
+        cited: 2,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Analisis Determinan Efisiensi Penggunaan Lahan di Kawasan Indonesia Bagian Barat: Pendekatan Slack Base Model",
+        authors: "MN Fajri, N Istifadah, B Putra",
+        venue: "Jurnal Pertanahan",
+        year: 2022,
+        cited: 1,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "The Effect of Economic Recovery Budget Efficiency on Price Stability in Indonesia: The Moderating Effect of Covid-19 Fluctuations",
+        authors: "A Kusumawardhani, Moh N Fajri",
+        venue: "JSRET, 4(2)",
+        year: 2025,
+        cited: null,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Maintaining Business Ease Through Bank Loans and Digital Transformation on Oil Palm Productivity in Lampung Province: A Polynomial Approach",
+        authors: "MN Fajri, A Kharisudin",
+        venue: "Jurnal Bina Praja, 17(1), 205–222",
+        year: 2025,
+        cited: null,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Good Governance and Trade Openness in Navigating Women's Labor Participation in Southeast Asia",
+        authors: "MN Fajri, N Cahayati, SR Ajija, BP Pratama",
+        venue: "Jurnal Ekonomi dan Pembangunan, 32(2), 189–223",
+        year: 2024,
+        cited: null,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "IMPACT OF RECENT MIGRATION AND LOCAL INCOME DISPARITY: DOES TIME VARIYING IMPLY?",
+        authors: "MN Fajri, N Istifadah, S Munawaroh, BP Pratama",
+        venue: "Jurnal Ilmu Ekonomi Terapan, 8(2)",
+        year: 2023,
+        cited: null,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "How Market Power Affects Potential Bankruptcy Post and During COVID-19: Does Sharia Rural Bank Soundness Matter?",
+        authors: "MN Fajri",
+        venue: "Journal of Southeast Asian Islam and Society, 2(2), 159–174",
+        year: 2023,
+        cited: null,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Mengeksplorasi Potensi Pertumbuhan Baru Berkelanjutan: Analisis Spasial Transformasi Digital dan Kompetisi Pemerintah Daerah terhadap Efisiensi Pembangunan Biru di Jawa Tengah",
+        authors: "MN Fajri, F Amilia",
+        venue: "PUSAKA Jawa Tengah, 2 (Agustus 2023)",
+        year: 2023,
+        cited: null,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Pengaruh Inovasi Teknologi dan Desentralisasi Fiskal terhadap Efisiensi Pembangunan Hijau: Efek Spasial dan Moderasi Jawa Barat",
+        authors: "MNF Gusnansyah, BP Pratama",
+        venue: "Proceedings of National Conference West Java Economic Society (WJES)",
+        year: 2022,
+        cited: null,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Village-Owned Enterprises in Brebes Regency: Governance Gaps, Market Competition, And Pathways to Sustainability",
+        authors: "T Pratysto, FX Sugiyanto, DC Sanjoko, MG Yusuf, MN Fajri",
+        venue: "Journal of Islamic Economy and Community Engagement, 6(2), 152–155",
+        year: 2025,
+        cited: null,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      },
+      {
+        title: "Harnessing Zakat to Drive Inclusive Economic Growth: Prospects and Challenges",
+        authors: "MN Fajri, A Kusumawardhani",
+        venue: "Journal Of Middle East and Islamic Studies, 12(1), 1–",
+        year: 2025,
+        cited: null,
+        links: [
+          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
+        ]
+      }
+    ];
 
-    btn?.addEventListener("click", () => {
-      const open = menu.classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-    });
+    const listEl = document.getElementById("pubList");
+    const qEl = document.getElementById("q");
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    let activeYear = "all";
 
-    // active link (simple)
-    document.querySelectorAll(".menu a").forEach(a => {
-      a.addEventListener("click", () => {
-        document.querySelectorAll(".menu a").forEach(x => x.classList.remove("active"));
-        a.classList.add("active");
-        menu.classList.remove("open");
-        btn?.setAttribute("aria-expanded", "false");
+    function norm(s){ return (s || "").toLowerCase(); }
+
+    function render(){
+      const q = norm(qEl.value);
+      const items = publications
+        .filter(p => activeYear === "all" ? true : String(p.year) === activeYear)
+        .filter(p => {
+          const blob = norm([p.title, p.authors, p.venue, p.year].join(" "));
+          return blob.includes(q);
+        })
+        .sort((a,b) => (b.year - a.year) || ((b.cited||0) - (a.cited||0)));
+
+      listEl.innerHTML = items.map(p => `
+        <article class="pub">
+          <div>
+            <h3>${p.title}</h3>
+            <div class="meta2">
+              <b>${p.authors}</b><br>
+              ${p.venue} · <b>${p.year}</b>
+            </div>
+          </div>
+          <div class="links">
+            ${p.cited !== null && p.cited !== undefined
+              ? `<span class="tag"><i class="fa-solid fa-quote-left"></i> Cited: ${p.cited}</span>`
+              : `<span class="tag"><i class="fa-solid fa-quote-left"></i> Cited: —</span>`
+            }
+            ${(p.links || []).map(l => `
+              <a class="linkbtn" href="${l.url}" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> ${l.label}
+              </a>
+            `).join("")}
+          </div>
+        </article>
+      `).join("");
+
+      if(items.length === 0){
+        listEl.innerHTML = `<div class="card"><strong>No results</strong><p>Coba kata kunci lain atau pilih filter tahun.</p></div>`;
+      }
+    }
+
+    chips.forEach(ch => {
+      ch.addEventListener("click", () => {
+        chips.forEach(x => x.classList.remove("active"));
+        ch.classList.add("active");
+        activeYear = ch.dataset.year;
+        render();
       });
     });
+
+    qEl.addEventListener("input", render);
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    render();
   </script>
 </body>
 </html>
