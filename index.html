@@ -61,12 +61,20 @@
       display:flex; align-items:center; justify-content:space-between;
       padding: 14px 0;
       gap: 16px;
+      position:relative;
     }
     .brand{
       display:flex; align-items:center; gap: 10px;
       font-weight: 900;
       letter-spacing: .2px;
       user-select:none;
+      min-width:0;
+      max-width:calc(100% - 60px);
+    }
+    .brand span:last-child{
+      font-size:clamp(13.5px, 2vw, 16px);
+      line-height:1.15;
+      white-space:nowrap;
     }
     .brand .dot{
       width: 10px; height: 10px; border-radius: 999px;
@@ -87,6 +95,11 @@
     .navlinks a:hover{
       background: rgba(255,255,255,.06);
       color: var(--text);
+    }
+    .navlinks a.active{
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.12);
     }
 
     .nav-cta{
@@ -116,18 +129,44 @@
 
     .hamburger{
       display:none;
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
+      width:44px;
+      height:44px;
+      flex:0 0 44px;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:6px;
+      padding:10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
       cursor:pointer;
-      padding: 10px 12px;
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
+      transition:background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .hamburger:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.22);
     }
     .hamburger span{
-      display:block;height:2px;border-radius:99px;background:rgba(255,255,255,.86);
+      display:block;
+      width:20px;
+      height:2px;
+      border-radius:99px;
+      background:rgba(255,255,255,.9);
+      transition:transform .2s ease, opacity .2s ease;
     }
-    .hamburger span+span{ margin-top:7px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1){
+      transform:translateY(8px) rotate(45deg);
+    }
+    .hamburger[aria-expanded="true"] span:nth-child(2){
+      opacity:0;
+    }
+    .hamburger[aria-expanded="true"] span:nth-child(3){
+      transform:translateY(-8px) rotate(-45deg);
+    }
 
     /* HERO */
     .hero{
@@ -468,26 +507,59 @@
       .pub{ grid-template-columns: 1fr; }
       .pub .links{ justify-content:flex-start; min-width: auto; }
       .nav-cta{ display:none; }
-    }
-    @media (max-width: 720px){
-      .hamburger{ display:inline-block; }
+      .hamburger{ display:flex; }
       .navlinks{
         position:absolute;
-        right:20px;
-        top:64px;
+        top:calc(100% + 10px);
+        right:0;
+        width:min(390px, 100%);
+        max-height:calc(100svh - 90px);
+        overflow-y:auto;
         display:none;
-        width: min(360px, calc(100% - 40px));
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-        padding: 12px;
-        border-radius: 18px;
-        background: rgba(7,10,20,.82);
-        border: 1px solid rgba(255,255,255,.12);
-        backdrop-filter: blur(12px);
+        flex-direction:column;
+        align-items:stretch;
+        gap:7px;
+        padding:12px;
+        border:1px solid rgba(255,255,255,.14);
+        border-radius:20px;
+        background:linear-gradient(180deg, rgba(11,16,38,.98), rgba(7,10,20,.96));
+        box-shadow:0 24px 70px rgba(0,0,0,.55);
+        backdrop-filter:blur(18px);
       }
-      .navlinks.open{ display:flex; }
-      .navlinks a{ background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); }
+      .navlinks.open{
+        display:flex;
+        animation:menuIn .18s ease both;
+      }
+      .navlinks a{
+        display:flex;
+        align-items:center;
+        min-height:46px;
+        padding:12px 14px;
+        border:1px solid rgba(255,255,255,.09);
+        background:rgba(255,255,255,.045);
+      }
+      .navlinks a:hover{
+        background:rgba(255,255,255,.09);
+        border-color:rgba(255,255,255,.16);
+      }
+      .navlinks a.active{
+        background:linear-gradient(135deg, rgba(255,79,216,.20), rgba(85,214,255,.14));
+        border-color:rgba(255,255,255,.20);
+      }
+    }
+    @keyframes menuIn{
+      from{ opacity:0; transform:translateY(-8px) scale(.98); }
+      to{ opacity:1; transform:translateY(0) scale(1); }
+    }
+    @media (max-width: 560px){
+      .container{ width:min(var(--max), calc(100% - 28px)); }
+      .brand{ gap:8px; }
+      .brand span:last-child{ font-size:clamp(12.5px, 4vw, 14px); }
+      .hero{ padding-top:32px; }
+      .navlinks{ width:100%; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .navlinks.open{ animation:none; }
     }
   </style>
 </head>
@@ -512,20 +584,24 @@
   <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-      <div class="brand">
+      <a class="brand" href="#home" aria-label="Moh Najikhul Fajri — Home">
         <span class="dot" aria-hidden="true"></span>
-        <span>Portfolio</span>
-      </div>
+        <span>Moh Najikhul Fajri</span>
+      </a>
 
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="ham">
+      <button class="hamburger" id="ham" type="button"
+              aria-label="Buka menu navigasi"
+              aria-controls="navlinks"
+              aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
       <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
-        <a href="#home">Home</a>
+        <a class="active" href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
         <a href="teaching.html">Teaching</a>
+        <a href="video.html">Video</a>
         <a href="#community">Community</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -791,13 +867,40 @@
     // ====== MOBILE NAV ======
     const ham = document.getElementById("ham");
     const navlinks = document.getElementById("navlinks");
-    if (ham && navlinks) {
+
+    function closeMenu(){
+      if(!ham || !navlinks) return;
+      navlinks.classList.remove("open");
+      ham.setAttribute("aria-expanded", "false");
+      ham.setAttribute("aria-label", "Buka menu navigasi");
+    }
+
+    if(ham && navlinks){
       ham.addEventListener("click", () => {
-        const open = navlinks.classList.toggle("open");
-        ham.setAttribute("aria-expanded", open ? "true" : "false");
+        const isOpen = navlinks.classList.toggle("open");
+        ham.setAttribute("aria-expanded", String(isOpen));
+        ham.setAttribute("aria-label", isOpen ? "Tutup menu navigasi" : "Buka menu navigasi");
       });
-      navlinks.querySelectorAll("a").forEach(a => {
-        a.addEventListener("click", () => navlinks.classList.remove("open"));
+
+      navlinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("click", event => {
+        if(!navlinks.contains(event.target) && !ham.contains(event.target)){
+          closeMenu();
+        }
+      });
+
+      document.addEventListener("keydown", event => {
+        if(event.key === "Escape"){
+          closeMenu();
+          ham.focus();
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if(window.innerWidth > 980) closeMenu();
       });
     }
 
