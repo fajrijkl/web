@@ -59,11 +59,19 @@
       display:flex; align-items:center; justify-content:space-between;
       padding: 14px 0;
       gap: 14px;
+      position:relative;
     }
     .brand{
       display:flex; align-items:center; gap: 10px;
       font-weight: 900; letter-spacing: .2px;
       user-select:none;
+      min-width:0;
+      max-width:calc(100% - 60px);
+    }
+    .brand span:last-child{
+      font-size:clamp(13.5px, 2vw, 16px);
+      line-height:1.15;
+      white-space:nowrap;
     }
     .brand .dot{
       width:10px;height:10px;border-radius:999px;
@@ -106,6 +114,51 @@
       border:none;
       background: linear-gradient(135deg, var(--c), var(--a));
       color:#081022;
+    }
+    .nav-cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .hamburger{
+      display:none;
+      width:44px;
+      height:44px;
+      flex:0 0 44px;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:6px;
+      padding:10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      cursor:pointer;
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
+      transition:background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .hamburger:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.22);
+    }
+    .hamburger span{
+      display:block;
+      width:20px;
+      height:2px;
+      border-radius:99px;
+      background:rgba(255,255,255,.9);
+      transition:transform .2s ease, opacity .2s ease;
+    }
+    .hamburger[aria-expanded="true"] span:nth-child(1){
+      transform:translateY(8px) rotate(45deg);
+    }
+    .hamburger[aria-expanded="true"] span:nth-child(2){
+      opacity:0;
+    }
+    .hamburger[aria-expanded="true"] span:nth-child(3){
+      transform:translateY(-8px) rotate(-45deg);
     }
 
     /* HERO */
@@ -303,7 +356,72 @@
 
     @media (max-width: 980px){
       .card{ grid-column: span 12; }
-      .navlinks{ display:none; }
+      .nav-cta{ display:none; }
+      .hamburger{ display:flex; }
+      .navlinks{
+        position:absolute;
+        top:calc(100% + 10px);
+        right:0;
+        width:min(390px, 100%);
+        max-height:calc(100svh - 90px);
+        overflow-y:auto;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:7px;
+        padding:12px;
+        border:1px solid rgba(255,255,255,.14);
+        border-radius:20px;
+        background:linear-gradient(180deg, rgba(11,16,38,.98), rgba(7,10,20,.96));
+        box-shadow:0 24px 70px rgba(0,0,0,.55);
+        backdrop-filter:blur(18px);
+      }
+      .navlinks.open{
+        display:flex;
+        animation:menuIn .18s ease both;
+      }
+      .navlinks a{
+        display:flex;
+        align-items:center;
+        min-height:46px;
+        padding:12px 14px;
+        border:1px solid rgba(255,255,255,.09);
+        background:rgba(255,255,255,.045);
+      }
+      .navlinks a:hover{
+        background:rgba(255,255,255,.09);
+        border-color:rgba(255,255,255,.16);
+      }
+      .navlinks a.active{
+        background:linear-gradient(135deg, rgba(255,79,216,.20), rgba(85,214,255,.14));
+        border-color:rgba(255,255,255,.20);
+      }
+    }
+    @keyframes menuIn{
+      from{ opacity:0; transform:translateY(-8px) scale(.98); }
+      to{ opacity:1; transform:translateY(0) scale(1); }
+    }
+    @media (max-width: 560px){
+      .container{ width:min(var(--max), calc(100% - 28px)); }
+      .brand{ gap:8px; }
+      .brand span:last-child{ font-size:clamp(12.5px, 4vw, 14px); }
+      .hero{ padding-top:24px; }
+      .hero-card{ padding:16px; border-radius:22px; }
+      .search{ min-width:100%; }
+      .chips{
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        width:100%;
+        overflow-x:auto;
+        padding-bottom:4px;
+        scrollbar-width:thin;
+      }
+      .navlinks{
+        width:100%;
+      }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .navlinks.open{ animation:none; }
     }
   </style>
 </head>
@@ -316,20 +434,26 @@
         <span>Moh Najikhul Fajri</span>
       </a>
 
-      <nav class="navlinks" aria-label="Primary navigation">
+      <button class="hamburger" id="ham" type="button"
+              aria-label="Buka menu navigasi"
+              aria-controls="navlinks"
+              aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#publications">Publications</a>
         <a class="active" href="teaching.html">Teaching</a>
         <a href="video.html">Video</a>
-        <a href="index.html#publications">Publications</a>
+        <a href="index.html#community">Community</a>
         <a href="index.html#contact">Contact</a>
       </nav>
 
-      <div style="display:flex; gap:10px; align-items:center;">
-        <a class="btn" href="mailto:fajrijikhul@lecturer.undip.ac.id"><i class="fa-regular fa-envelope"></i> Email</a>
-        <a class="btn primary" href="https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" target="_blank" rel="noopener">
-          <i class="fa-solid fa-graduation-cap"></i> Scholar
-        </a>
+      <div class="nav-cta">
+        <a class="btn" href="mailto:fajrijikhul@lecturer.undip.ac.id"><i class="fa-regular fa-paper-plane"></i> Email</a>
+        <a class="btn primary" href="index.html#publications"><i class="fa-solid fa-book"></i> Papers</a>
       </div>
     </div>
   </header>
@@ -379,6 +503,46 @@
   </main>
 
   <script>
+    // ===== MOBILE / TABLET NAVIGATION =====
+    const ham = document.getElementById("ham");
+    const navlinks = document.getElementById("navlinks");
+
+    function closeMenu(){
+      if(!ham || !navlinks) return;
+      navlinks.classList.remove("open");
+      ham.setAttribute("aria-expanded", "false");
+      ham.setAttribute("aria-label", "Buka menu navigasi");
+    }
+
+    if(ham && navlinks){
+      ham.addEventListener("click", () => {
+        const isOpen = navlinks.classList.toggle("open");
+        ham.setAttribute("aria-expanded", String(isOpen));
+        ham.setAttribute("aria-label", isOpen ? "Tutup menu navigasi" : "Buka menu navigasi");
+      });
+
+      navlinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("click", event => {
+        if(!navlinks.contains(event.target) && !ham.contains(event.target)){
+          closeMenu();
+        }
+      });
+
+      document.addEventListener("keydown", event => {
+        if(event.key === "Escape"){
+          closeMenu();
+          ham.focus();
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if(window.innerWidth > 980) closeMenu();
+      });
+    }
+
     // ===== DATA MATERI DAN KIT PEMBELAJARAN =====
     const materials = [
       {
