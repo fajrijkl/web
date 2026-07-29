@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Teaching materials — Moh Najikhul Fajri" />
-  <title>Teaching | Moh Najikhul Fajri</title>
+  <meta name="description" content="Materi dan Kit Pembelajaran Perkuliahan — Moh Najikhul Fajri" />
+  <title>Materi dan Kit Pembelajaran Perkuliahan | Moh Najikhul Fajri</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -335,28 +335,30 @@
 
   <main class="container hero">
     <div class="hero-card">
-      <div class="kicker"><i class="fa-solid fa-chalkboard-user"></i> Teaching Materials</div>
-      <h1>Pengajaran & Materi</h1>
+      <div class="kicker"><i class="fa-solid fa-chalkboard-user"></i> Teaching Resources</div>
+      <h1>Materi dan Kit Pembelajaran Perkuliahan</h1>
       <p class="sub">
-        Halaman ini untuk mengelola dan membagikan materi kuliah (slides, modul, datasets, tugas, rubrik).
-        Anda bisa menaruh file di folder repo (mis. <b>/materials</b>) atau link eksternal (Drive/OneDrive/Zenodo).
+        Halaman ini memuat materi kuliah, modul, bahan presentasi, dataset, tugas,
+        rubrik, dan berbagai kit pembelajaran untuk mendukung proses perkuliahan.
+        Saat ini materi yang tersedia berasal dari mata kuliah Matematika Ekonomi I,
+        sedangkan materi dari mata kuliah lainnya akan ditambahkan secara bertahap.
       </p>
 
       <div class="meta">
         <span class="pill"><i class="fa-solid fa-school"></i> FEB UNDIP</span>
-        <span class="pill"><i class="fa-solid fa-link"></i> Share-ready</span>
-        <span class="pill"><i class="fa-solid fa-magnifying-glass"></i> Search + Filter</span>
+        <span class="pill"><i class="fa-solid fa-book-open"></i> Materi Perkuliahan</span>
+        <span class="pill"><i class="fa-solid fa-toolbox"></i> Learning Kits</span>
       </div>
     </div>
 
     <div class="controls">
       <div class="search" role="search">
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        <input id="q" type="search" placeholder="Cari: Mata kuliah / topik / jenis materi..." autocomplete="off" />
+        <input id="q" type="search" placeholder="Cari mata kuliah, topik, atau jenis materi..." autocomplete="off" />
       </div>
 
       <div class="chips" aria-label="Filters">
-        <span class="chip active" data-cat="all">All</span>
+        <span class="chip active" data-cat="all">Semua</span>
         <span class="chip" data-cat="Slides">Slides</span>
         <span class="chip" data-cat="Modul">Modul</span>
         <span class="chip" data-cat="Assignment">Assignment</span>
@@ -365,76 +367,27 @@
       </div>
     </div>
 
+    <section id="grid" class="grid" aria-live="polite"></section>
+
  
 
     <footer>
-      <div class="container">© <span id="year"></span> Moh Najikhul Fajri · Teaching Page</div>
+      <div class="container">© <span id="year"></span> Moh Najikhul Fajri · Materi dan Kit Pembelajaran Perkuliahan</div>
     </footer>
   </main>
 
   <script>
-    // ===== DATA MATERI (EDIT DI SINI) =====
-    // url bisa: "materials/namafile.pdf" (file di repo) atau URL Google Drive/OneDrive dll.
+    // ===== DATA MATERI DAN KIT PEMBELAJARAN =====
     const materials = [
       {
-        course: "Pengantar Teori Ekonomi Mikro",
-        title: "Intro: Scarcity, Choice, and Opportunity Cost",
-        type: "Slides",
-        week: "Week 1",
-        updated: "2026-02",
-        url: "#",
-        note: "Ganti url dengan link file (contoh: materials/mikro-w1.pdf).",
-        tags: ["Micro", "Basics"]
-      },
-      {
-        course: "Ekonometrika I",
-        title: "OLS Fundamentals + Classical Assumptions",
-        type: "Slides",
-        week: "Week 2",
-        updated: "2026-02",
-        url: "#",
-        note: "Bisa tambahkan dataset & do-file di repo.",
-        tags: ["Econometrics", "OLS"]
-      },
-      {
         course: "Matematika Ekonomi I",
-        title: "Optimization: First/Second Order Conditions",
+        title: "Bab 1: Fundamental Berpikir Matematika Ekonomi",
         type: "Modul",
-        week: "Week 3",
-        updated: "2026-02",
-        url: "#",
-        note: "Cocok untuk file PDF ringkas + latihan soal.",
-        tags: ["Math Econ", "Optimization"]
-      },
-      {
-        course: "Ekonomi Industri I",
-        title: "Structure–Conduct–Performance (SCP) vs New IO",
-        type: "Slides",
-        week: "Week 4",
-        updated: "2026-02",
-        url: "#",
-        note: "Tambahkan bacaan wajib dan studi kasus.",
-        tags: ["IO", "SCP"]
-      },
-      {
-        course: "Ekonomi Pembangunan II",
-        title: "Regional Development: Basics of Spatial Spillovers",
-        type: "Slides",
-        week: "Week 5",
-        updated: "2026-02",
-        url: "#",
-        note: "Jika punya dataset contoh, taruh di materials/dataset/.",
-        tags: ["Development", "Spatial"]
-      },
-      {
-        course: "Perekonomian Indonesia",
-        title: "Assignment: Analisis Sektor & Isu Makro Terkini",
-        type: "Assignment",
-        week: "Week 6",
-        updated: "2026-02",
-        url: "#",
-        note: "Tambahkan rubrik penilaian bila ada.",
-        tags: ["Indonesia", "Policy"]
+        week: "Bab 1",
+        updated: "2026-07",
+        url: "https://drive.google.com/file/d/1KAZCsViiasU6ML7YiXXvzt28Ym_2yWYu/view?usp=sharing",
+        note: "Materi pengantar untuk membangun fondasi berpikir matematis dalam memahami dan memodelkan persoalan ekonomi.",
+        tags: ["Matematika Ekonomi", "Fundamental", "Bab 1"]
       }
     ];
 
@@ -483,10 +436,10 @@
 
           <div class="actions">
             <a class="linkbtn" href="${m.url}" target="_blank" rel="noopener">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open
+              <i class="fa-brands fa-google-drive"></i> Buka Materi
             </a>
             <a class="linkbtn" href="mailto:fajrijikhul@lecturer.undip.ac.id?subject=Request%20Teaching%20Material&body=Halo%20Pak%20Fajri,%20saya%20ingin%20meminta%20materi:%20${encodeURIComponent(m.title)}%20(%20${encodeURIComponent(m.course)}%20).">
-              <i class="fa-regular fa-paper-plane"></i> Request
+              <i class="fa-regular fa-envelope"></i> Hubungi Dosen
             </a>
           </div>
         </article>
