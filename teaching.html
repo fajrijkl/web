@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Materi dan Kit Pembelajaran Perkuliahan — Moh Najikhul Fajri" />
-  <title>Materi dan Kit Pembelajaran Perkuliahan | Moh Najikhul Fajri</title>
+  <meta name="description" content="Publications and Working Papers — Moh Najikhul Fajri" />
+  <title>Publications & Working Papers | Moh Najikhul Fajri</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,110 +15,121 @@
     :root{
       --bg0:#070A14;
       --bg1:#0B1026;
-      --card: rgba(255,255,255,.06);
-      --border: rgba(255,255,255,.12);
+      --border:rgba(255,255,255,.12);
       --text:#EAF0FF;
-      --muted: rgba(234,240,255,.72);
-      --muted2: rgba(234,240,255,.58);
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --r: 20px;
-
+      --muted:rgba(234,240,255,.72);
+      --muted2:rgba(234,240,255,.58);
+      --shadow:0 18px 60px rgba(0,0,0,.45);
       --a:#55D6FF;
       --b:#B66BFF;
       --c:#FF4FD8;
-
-      --max: 1120px;
+      --max:1120px;
     }
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(900px 520px at 12% 18%, rgba(85,214,255,.18), transparent 55%),
-        radial-gradient(900px 520px at 88% 30%, rgba(255,79,216,.14), transparent 55%),
-        radial-gradient(1000px 700px at 60% 100%, rgba(182,107,255,.14), transparent 55%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-      min-height: 100svh;
+      min-height:100svh;
       overflow-x:hidden;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 12% 18%,rgba(85,214,255,.18),transparent 55%),
+        radial-gradient(900px 520px at 88% 30%,rgba(255,79,216,.14),transparent 55%),
+        radial-gradient(1000px 700px at 60% 100%,rgba(182,107,255,.14),transparent 55%),
+        linear-gradient(180deg,var(--bg0),var(--bg1));
     }
 
     a{ color:inherit; text-decoration:none; }
-    .container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .container{ width:min(var(--max),calc(100% - 40px)); margin:0 auto; }
 
     /* NAV */
     .nav{
-      position: sticky; top:0; z-index: 50;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(180deg, rgba(7,10,20,.78), rgba(7,10,20,.35));
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      position:sticky;
+      top:0;
+      z-index:50;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg,rgba(7,10,20,.78),rgba(7,10,20,.35));
+      backdrop-filter:blur(12px);
     }
     .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 14px 0;
-      gap: 14px;
       position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
     }
     .brand{
-      display:flex; align-items:center; gap: 10px;
-      font-weight: 900; letter-spacing: .2px;
-      user-select:none;
+      display:flex;
+      align-items:center;
+      gap:10px;
       min-width:0;
       max-width:calc(100% - 60px);
+      font-weight:900;
+      letter-spacing:.2px;
+      user-select:none;
     }
     .brand span:last-child{
-      font-size:clamp(13.5px, 2vw, 16px);
+      font-size:clamp(13.5px,2vw,16px);
       line-height:1.15;
       white-space:nowrap;
     }
     .brand .dot{
-      width:10px;height:10px;border-radius:999px;
-      background: linear-gradient(135deg, var(--a), var(--c));
-      box-shadow: 0 0 24px rgba(255,79,216,.45);
+      width:10px;
+      height:10px;
+      flex:0 0 10px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--a),var(--c));
+      box-shadow:0 0 24px rgba(255,79,216,.45);
     }
     .navlinks{
-      display:flex; align-items:center; gap: 10px;
-      font-weight: 650;
-      color: var(--muted);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      font-weight:650;
     }
     .navlinks a{
-      padding: 10px 10px;
-      border-radius: 12px;
-      transition: .2s ease;
+      padding:10px;
+      border-radius:12px;
+      transition:.2s ease;
     }
     .navlinks a:hover{
-      background: rgba(255,255,255,.06);
-      color: var(--text);
+      color:var(--text);
+      background:rgba(255,255,255,.06);
     }
     .navlinks a.active{
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,.12);
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
     }
+    .nav-cta{ display:flex; align-items:center; gap:10px; }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       gap:10px;
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      font-weight: 800;
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      padding:11px 14px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      color:var(--text);
+      background:rgba(255,255,255,.06);
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
+      font-weight:800;
       white-space:nowrap;
+      transition:transform .18s ease,background .18s ease,border-color .18s ease;
     }
-    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.20); }
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.20);
+      background:rgba(255,255,255,.09);
+    }
     .btn.primary{
       border:none;
-      background: linear-gradient(135deg, var(--c), var(--a));
       color:#081022;
-    }
-    .nav-cta{
-      display:flex;
-      gap:10px;
-      align-items:center;
+      background:linear-gradient(135deg,var(--c),var(--a));
     }
     .hamburger{
       display:none;
@@ -130,18 +141,18 @@
       flex-direction:column;
       gap:6px;
       padding:10px;
-      border-radius:14px;
       border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
+      border-radius:14px;
       color:var(--text);
-      cursor:pointer;
+      background:rgba(255,255,255,.06);
       box-shadow:0 10px 28px rgba(0,0,0,.25);
-      transition:background .18s ease, border-color .18s ease, transform .18s ease;
+      cursor:pointer;
+      transition:background .18s ease,border-color .18s ease,transform .18s ease;
     }
     .hamburger:hover{
       transform:translateY(-1px);
-      background:rgba(255,255,255,.10);
       border-color:rgba(255,255,255,.22);
+      background:rgba(255,255,255,.10);
     }
     .hamburger span{
       display:block;
@@ -149,237 +160,225 @@
       height:2px;
       border-radius:99px;
       background:rgba(255,255,255,.9);
-      transition:transform .2s ease, opacity .2s ease;
+      transition:transform .2s ease,opacity .2s ease;
     }
-    .hamburger[aria-expanded="true"] span:nth-child(1){
-      transform:translateY(8px) rotate(45deg);
-    }
-    .hamburger[aria-expanded="true"] span:nth-child(2){
-      opacity:0;
-    }
-    .hamburger[aria-expanded="true"] span:nth-child(3){
-      transform:translateY(-8px) rotate(-45deg);
-    }
+    .hamburger[aria-expanded="true"] span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 
-    /* HERO */
-    .hero{
-      padding: 36px 0 12px;
-    }
+    /* PAGE */
+    .page{ padding:36px 0 12px; }
     .hero-card{
-      border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      padding: 18px 18px;
-      position: relative;
+      position:relative;
       overflow:hidden;
+      padding:22px;
+      border:1px solid var(--border);
+      border-radius:26px;
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.04));
+      box-shadow:var(--shadow);
     }
     .hero-card::before{
       content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(700px 350px at 18% 10%, rgba(85,214,255,.18), transparent 55%),
-                  radial-gradient(600px 340px at 90% 80%, rgba(255,79,216,.14), transparent 55%);
-      pointer-events:none;
+      position:absolute;
+      inset:-2px;
       z-index:0;
+      pointer-events:none;
+      background:
+        radial-gradient(700px 350px at 18% 10%,rgba(85,214,255,.18),transparent 55%),
+        radial-gradient(600px 340px at 90% 80%,rgba(255,79,216,.14),transparent 55%);
     }
     .hero-card > *{ position:relative; z-index:1; }
     .kicker{
-      display:inline-flex;align-items:center;gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color: var(--muted);
-      font-weight: 700;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--muted);
+      background:rgba(255,255,255,.06);
+      font-weight:700;
     }
     h1{
-      margin: 12px 0 8px;
-      font-size: clamp(26px, 3.2vw, 40px);
-      letter-spacing: -0.02em;
-      line-height:1.1;
+      margin:12px 0 8px;
+      font-size:clamp(28px,4vw,46px);
+      line-height:1.08;
+      letter-spacing:-.025em;
     }
     .sub{
+      max-width:86ch;
       margin:0;
-      color: var(--muted);
+      color:var(--muted);
       line-height:1.75;
-      max-width: 85ch;
     }
-    .meta{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 14px;
-      color: var(--muted2);
-      font-weight: 650;
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
     }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 8px 10px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.10);
-      white-space:nowrap;
+    .stat{
+      padding:13px 14px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      background:rgba(255,255,255,.045);
     }
+    .stat strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:19px;
+    }
+    .stat span{ color:var(--muted2); font-size:12px; font-weight:700; }
 
-    /* CONTROLS */
     .controls{
       display:flex;
-      gap: 12px;
-      flex-wrap:wrap;
       align-items:center;
       justify-content:space-between;
-      margin: 16px 0 12px;
+      gap:12px;
+      margin:18px 0 14px;
     }
     .search{
-      flex: 1 1 320px;
-      display:flex; align-items:center; gap:10px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      padding: 10px 12px;
-      min-width: 260px;
+      display:flex;
+      flex:1 1 360px;
+      align-items:center;
+      gap:10px;
+      min-width:260px;
+      padding:11px 13px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:16px;
+      background:rgba(255,255,255,.05);
     }
     .search input{
       width:100%;
-      background: transparent;
       border:none;
       outline:none;
-      color: var(--text);
-      font-weight: 650;
-      font-size: 14px;
+      color:var(--text);
+      background:transparent;
+      font:650 14px Inter,sans-serif;
     }
-    .search input::placeholder{ color: rgba(234,240,255,.45); }
-
-    .chips{
-      display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;
-    }
-    .chip{
-      padding: 9px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      color: rgba(234,240,255,.86);
-      font-weight: 900;
-      font-size: 12px;
+    .search input::placeholder{ color:rgba(234,240,255,.45); }
+    .filters{ display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
+    .filter{
+      padding:9px 11px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      color:rgba(234,240,255,.86);
+      background:rgba(255,255,255,.05);
+      font:900 12px Inter,sans-serif;
+      white-space:nowrap;
       cursor:pointer;
-      transition: .15s ease;
-      user-select:none;
-      white-space:nowrap;
+      transition:.15s ease;
     }
-    .chip.active{
-      background: linear-gradient(135deg, rgba(255,79,216,.25), rgba(85,214,255,.18));
-      border-color: rgba(255,255,255,.22);
+    .filter.active{
+      border-color:rgba(255,255,255,.22);
+      background:linear-gradient(135deg,rgba(255,79,216,.25),rgba(85,214,255,.18));
     }
 
-    /* GRID */
-    .grid{
+    .collection{ margin-top:24px; }
+    .collection-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:12px;
+    }
+    .eyebrow{
+      display:block;
+      margin-bottom:5px;
+      color:var(--a);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.16em;
+    }
+    .collection h2{ margin:0; font-size:clamp(21px,3vw,28px); }
+    .collection-head p{ max-width:60ch; margin:0; color:var(--muted2); font-size:13px; line-height:1.6; }
+    .list{ display:grid; gap:12px; }
+    .paper{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-      margin-top: 10px;
+      grid-template-columns:minmax(0,1fr) auto;
+      align-items:start;
+      gap:16px;
+      padding:15px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      background:rgba(255,255,255,.05);
+      transition:transform .16s ease,background .16s ease,border-color .16s ease;
     }
-    .card{
-      grid-column: span 6;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      border-radius: var(--r);
-      padding: 14px 14px;
-      box-shadow: 0 14px 50px rgba(0,0,0,.30);
-      transition: transform .16s ease, background .16s ease, border-color .16s ease;
+    .paper:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.07);
     }
-    .card:hover{
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.07);
-      border-color: rgba(255,255,255,.18);
+    .paper h3{
+      margin:0 0 6px;
+      font-size:15px;
+      line-height:1.4;
+      letter-spacing:-.01em;
     }
-    .head{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-      margin-bottom: 8px;
+    .paper-meta{ color:var(--muted); font-size:13px; line-height:1.6; }
+    .paper-meta b{ color:rgba(234,240,255,.9); }
+    .paper-actions{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+      gap:8px;
+      min-width:230px;
     }
-    .title{
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      line-height:1.25;
-      margin:0;
-      font-size: 15px;
-    }
-    .meta2{
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-      margin-top: 6px;
-    }
-    .tags{
-      display:flex; gap:8px; flex-wrap:wrap;
-      margin-top: 10px;
-    }
-    .tag{
-      font-size: 12px;
-      font-weight: 900;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color: rgba(234,240,255,.86);
+    .tag,.linkbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:8px 10px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      color:rgba(234,240,255,.86);
+      background:rgba(255,255,255,.05);
+      font-size:12px;
+      font-weight:900;
       white-space:nowrap;
     }
-    .actions{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top: 12px;
-    }
-    .linkbtn{
-      font-size: 12px;
-      font-weight: 900;
-      padding: 9px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      transition: .15s ease;
-      white-space:nowrap;
-      display:inline-flex; align-items:center; gap:8px;
-    }
-    .linkbtn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
-
+    .linkbtn{ transition:.15s ease; }
+    .linkbtn:hover{ transform:translateY(-1px); background:rgba(255,255,255,.10); }
     .empty{
-      border: 1px dashed rgba(255,255,255,.18);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--r);
-      padding: 16px;
-      color: var(--muted);
+      padding:22px;
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius:20px;
+      color:var(--muted);
+      background:rgba(255,255,255,.035);
       line-height:1.7;
     }
-
+    .empty strong{ display:block; margin-bottom:5px; color:var(--text); }
+    .hidden{ display:none !important; }
     footer{
-      padding: 26px 0 40px;
-      color: rgba(234,240,255,.55);
-      border-top: 1px solid rgba(255,255,255,.08);
-      margin-top: 22px;
+      margin-top:28px;
+      padding:26px 0 40px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(234,240,255,.55);
     }
 
-    @media (max-width: 980px){
-      .card{ grid-column: span 12; }
+    @media (max-width:980px){
       .nav-cta{ display:none; }
       .hamburger{ display:flex; }
       .navlinks{
         position:absolute;
         top:calc(100% + 10px);
         right:0;
-        width:min(390px, 100%);
+        display:none;
+        width:min(390px,100%);
         max-height:calc(100svh - 90px);
         overflow-y:auto;
-        display:none;
         flex-direction:column;
         align-items:stretch;
         gap:7px;
         padding:12px;
         border:1px solid rgba(255,255,255,.14);
         border-radius:20px;
-        background:linear-gradient(180deg, rgba(11,16,38,.98), rgba(7,10,20,.96));
+        background:linear-gradient(180deg,rgba(11,16,38,.98),rgba(7,10,20,.96));
         box-shadow:0 24px 70px rgba(0,0,0,.55);
         backdrop-filter:blur(18px);
       }
-      .navlinks.open{
-        display:flex;
-        animation:menuIn .18s ease both;
-      }
+      .navlinks.open{ display:flex; animation:menuIn .18s ease both; }
       .navlinks a{
         display:flex;
         align-items:center;
@@ -389,38 +388,43 @@
         background:rgba(255,255,255,.045);
       }
       .navlinks a:hover{
-        background:rgba(255,255,255,.09);
         border-color:rgba(255,255,255,.16);
+        background:rgba(255,255,255,.09);
       }
       .navlinks a.active{
-        background:linear-gradient(135deg, rgba(255,79,216,.20), rgba(85,214,255,.14));
         border-color:rgba(255,255,255,.20);
+        background:linear-gradient(135deg,rgba(255,79,216,.20),rgba(85,214,255,.14));
       }
     }
     @keyframes menuIn{
       from{ opacity:0; transform:translateY(-8px) scale(.98); }
       to{ opacity:1; transform:translateY(0) scale(1); }
     }
-    @media (max-width: 560px){
-      .container{ width:min(var(--max), calc(100% - 28px)); }
-      .brand{ gap:8px; }
-      .brand span:last-child{ font-size:clamp(12.5px, 4vw, 14px); }
-      .hero{ padding-top:24px; }
-      .hero-card{ padding:16px; border-radius:22px; }
-      .search{ min-width:100%; }
-      .chips{
+    @media (max-width:720px){
+      .stats{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .controls{ align-items:stretch; flex-direction:column; }
+      .search{ flex-basis:auto; min-width:100%; }
+      .filters{
         flex-wrap:nowrap;
         justify-content:flex-start;
         width:100%;
         overflow-x:auto;
         padding-bottom:4px;
-        scrollbar-width:thin;
       }
-      .navlinks{
-        width:100%;
-      }
+      .paper{ grid-template-columns:1fr; }
+      .paper-actions{ justify-content:flex-start; min-width:0; }
+      .collection-head{ align-items:flex-start; flex-direction:column; gap:5px; }
     }
-    @media (prefers-reduced-motion: reduce){
+    @media (max-width:560px){
+      .container{ width:min(var(--max),calc(100% - 28px)); }
+      .brand{ gap:8px; }
+      .brand span:last-child{ font-size:clamp(12.5px,4vw,14px); }
+      .page{ padding-top:24px; }
+      .hero-card{ padding:17px; border-radius:22px; }
+      .stats{ grid-template-columns:1fr; gap:8px; }
+      .navlinks{ width:100%; }
+    }
+    @media (prefers-reduced-motion:reduce){
       .navlinks.open{ animation:none; }
     }
   </style>
@@ -429,7 +433,7 @@
 <body>
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="Moh Najikhul Fajri — Home">
         <span class="dot" aria-hidden="true"></span>
         <span>Moh Najikhul Fajri</span>
       </a>
@@ -444,8 +448,8 @@
       <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="index.html#about">About</a>
-        <a href="index.html#publications">Publications</a>
-        <a class="active" href="teaching.html">Teaching</a>
+        <a class="active" href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
         <a href="video.html">Video</a>
         <a href="index.html#community">Community</a>
         <a href="index.html#contact">Contact</a>
@@ -453,231 +457,245 @@
 
       <div class="nav-cta">
         <a class="btn" href="mailto:fajrijikhul@lecturer.undip.ac.id"><i class="fa-regular fa-paper-plane"></i> Email</a>
-        <a class="btn primary" href="index.html#publications"><i class="fa-solid fa-book"></i> Papers</a>
+        <a class="btn primary" href="#published"><i class="fa-solid fa-book"></i> Papers</a>
       </div>
     </div>
   </header>
 
-  <main class="container hero">
-    <div class="hero-card">
-      <div class="kicker"><i class="fa-solid fa-chalkboard-user"></i> Teaching Resources</div>
-      <h1>Materi dan Kit Pembelajaran Perkuliahan</h1>
+  <main class="container page">
+    <section class="hero-card">
+      <div class="kicker"><i class="fa-solid fa-book-open"></i> Research Portfolio</div>
+      <h1>Publications & Working Papers</h1>
       <p class="sub">
-        Halaman ini memuat materi kuliah, modul, bahan presentasi, dataset, tugas,
-        rubrik, dan berbagai kit pembelajaran untuk mendukung proses perkuliahan.
-        Saat ini tersedia bahan presentasi untuk mata kuliah Matematika Ekonomi I,
-        Statistika Ekonomi dan Bisnis I, Makroekonomika I (TE Makro I), Mikroekonomika I (TE Mikro I), Ekonomika Pembangunan II (Ekbang II/Empirik), serta Ekonomi Industri I. Materi dari mata kuliah lainnya
-        akan ditambahkan secara bertahap.
+        Kumpulan publikasi ilmiah dan naskah kerja Moh Najikhul Fajri dalam ekonomi terapan,
+        pembangunan regional, transformasi digital, perbankan, dan analisis kebijakan berbasis data.
       </p>
-
-      <div class="meta">
-        <span class="pill"><i class="fa-solid fa-school"></i> FEB UNDIP</span>
-        <span class="pill"><i class="fa-solid fa-book-open"></i> Materi Perkuliahan</span>
-        <span class="pill"><i class="fa-solid fa-toolbox"></i> Learning Kits</span>
+      <div class="stats" aria-label="Ringkasan koleksi">
+        <div class="stat"><strong id="publishedCount">0</strong><span>Published works</span></div>
+        <div class="stat"><strong id="workingCount">0</strong><span>Working papers</span></div>
+        <div class="stat"><strong id="fundingCount">0</strong><span>Research funding</span></div>
+        <div class="stat"><strong id="yearRange">—</strong><span>Publication years</span></div>
       </div>
-    </div>
+    </section>
 
     <div class="controls">
-      <div class="search" role="search">
+      <label class="search">
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        <input id="q" type="search" placeholder="Cari mata kuliah, topik, atau jenis materi..." autocomplete="off" />
-      </div>
-
-      <div class="chips" aria-label="Filters">
-        <span class="chip active" data-cat="all">Semua</span>
-        <span class="chip" data-cat="Slides">Slides</span>
-        <span class="chip" data-cat="Modul">Modul</span>
-        <span class="chip" data-cat="Assignment">Assignment</span>
-        <span class="chip" data-cat="Dataset">Dataset</span>
-        <span class="chip" data-cat="Rubric">Rubric</span>
+        <input id="q" type="search" placeholder="Cari judul, penulis, jurnal, topik, atau tahun..." autocomplete="off" />
+      </label>
+      <div class="filters" aria-label="Filter koleksi">
+        <button class="filter active" type="button" data-filter="all">Semua</button>
+        <button class="filter" type="button" data-filter="published">Published</button>
+        <button class="filter" type="button" data-filter="working">Working Papers</button>
+        <button class="filter" type="button" data-filter="funding">Research Funding</button>
       </div>
     </div>
 
-    <section id="grid" class="grid" aria-live="polite"></section>
+    <section class="collection" id="published" data-collection="published">
+      <div class="collection-head">
+        <div>
+          <span class="eyebrow">PEER-REVIEWED & PUBLISHED</span>
+          <h2>Published Research</h2>
+        </div>
+        <p>Artikel jurnal, prosiding, dan karya ilmiah yang telah diterbitkan.</p>
+      </div>
+      <div class="list" id="publishedList" aria-live="polite"></div>
+    </section>
 
- 
+    <section class="collection" id="working-papers" data-collection="working">
+      <div class="collection-head">
+        <div>
+          <span class="eyebrow">RESEARCH IN PROGRESS</span>
+          <h2>Working Papers</h2>
+        </div>
+        <p>Naskah yang sedang dikembangkan, direvisi, atau berada dalam proses editorial.</p>
+      </div>
+      <div class="list" id="workingList" aria-live="polite"></div>
+    </section>
 
-    <footer>
-      <div class="container">© <span id="year"></span> Moh Najikhul Fajri · Materi dan Kit Pembelajaran Perkuliahan</div>
-    </footer>
+    <section class="collection" id="research-funding" data-collection="funding">
+      <div class="collection-head">
+        <div>
+          <span class="eyebrow">FUNDED RESEARCH</span>
+          <h2>Research Funding</h2>
+        </div>
+        <p>Hibah dan pendanaan penelitian yang diperoleh atau sedang berjalan.</p>
+      </div>
+      <div class="list" id="fundingList" aria-live="polite"></div>
+    </section>
+
+    <footer>© <span id="year"></span> Moh Najikhul Fajri · Publications & Working Papers</footer>
   </main>
 
   <script>
-    // ===== MOBILE / TABLET NAVIGATION =====
-    const ham = document.getElementById("ham");
-    const navlinks = document.getElementById("navlinks");
-
-    function closeMenu(){
-      if(!ham || !navlinks) return;
-      navlinks.classList.remove("open");
-      ham.setAttribute("aria-expanded", "false");
-      ham.setAttribute("aria-label", "Buka menu navigasi");
-    }
-
-    if(ham && navlinks){
-      ham.addEventListener("click", () => {
-        const isOpen = navlinks.classList.toggle("open");
-        ham.setAttribute("aria-expanded", String(isOpen));
-        ham.setAttribute("aria-label", isOpen ? "Tutup menu navigasi" : "Buka menu navigasi");
-      });
-
-      navlinks.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", closeMenu);
-      });
-
-      document.addEventListener("click", event => {
-        if(!navlinks.contains(event.target) && !ham.contains(event.target)){
-          closeMenu();
-        }
-      });
-
-      document.addEventListener("keydown", event => {
-        if(event.key === "Escape"){
-          closeMenu();
-          ham.focus();
-        }
-      });
-
-      window.addEventListener("resize", () => {
-        if(window.innerWidth > 980) closeMenu();
-      });
-    }
-
-    // ===== DATA MATERI DAN KIT PEMBELAJARAN =====
-    const materials = [
-      {
-        course: "Matematika Ekonomi I",
-        title: "Bab 1: Fundamental Berpikir Matematika Ekonomi",
-        type: "Slides",
-        week: "Bab 1",
-        updated: "2026-07",
-        url: "https://drive.google.com/file/d/1KAZCsViiasU6ML7YiXXvzt28Ym_2yWYu/view?usp=sharing",
-        note: "Bahan presentasi pengantar untuk membangun fondasi berpikir matematis dalam memahami dan memodelkan persoalan ekonomi.",
-        tags: ["Matematika Ekonomi", "Fundamental", "Bab 1"]
-      },
-      {
-        course: "Statistika Ekonomi dan Bisnis I",
-        title: "Bab 1: Dasar dan Fundamental Statistik, Data, serta Pengambilan Keputusan",
-        type: "Slides",
-        week: "Bab 1",
-        updated: "2026-07",
-        url: "https://drive.google.com/file/d/1GZBj0DulI23_J8v4qPRM5xmva2d5xvvd/view?usp=sharing",
-        note: "Bahan presentasi mengenai konsep dasar statistik dan statistika, data dan variabel, statistika deskriptif dan inferensial, tingkat pengukuran, serta peran statistika dalam pengambilan keputusan ekonomi dan bisnis.",
-        tags: ["Statistika Ekonomi dan Bisnis", "Data", "Pengambilan Keputusan", "Bab 1"]
-      },
-      {
-        course: "Makroekonomika I (TE Makro I)",
-        title: "Bab 1: Dasar dan Fundamental Makroekonomika",
-        type: "Slides",
-        week: "Bab 1",
-        updated: "2026-07",
-        url: "https://drive.google.com/file/d/1fxzfvT3kKtgMoi4SAY5BchE5SIe1ZpPI/view?usp=sharing",
-        note: "Bahan presentasi pengantar mengenai konsep dasar makroekonomi, ruang lingkup kajian, variabel makroekonomi, dan pentingnya analisis makro dalam pengambilan kebijakan ekonomi.",
-        tags: ["Makroekonomika", "TE Makro I", "Fundamental", "Bab 1"]
-      },
-      {
-        course: "Mikroekonomika I (TE Mikro I)",
-        title: "Bab 1: Dasar-dasar Mikroekonomika",
-        type: "Slides",
-        week: "Bab 1",
-        updated: "2026-07",
-        url: "https://drive.google.com/file/d/11IuR-Gw4cYk-_ex0QbI2uEyRatrhCaRq/view?usp=drive_link",
-        note: "Bahan presentasi pengantar mengenai konsep dasar mikroekonomi, trade-off, mekanisme pasar, teori dan model ekonomi, serta analisis positif dan normatif.",
-        tags: ["Mikroekonomika", "TE Mikro I", "Fundamental", "Bab 1"]
-      },
-      {
-        course: "Ekonomika Pembangunan II (Ekbang II/Empirik)",
-        title: "Bab 1: Evolusi Pemikiran Pembangunan dan Teori-Teori Pertumbuhan",
-        type: "Slides",
-        week: "Bab 1",
-        updated: "2026-07",
-        url: "https://drive.google.com/file/d/1s4irm19Czbf-KnjvD840ygeR2dGI556p/view?usp=sharing",
-        note: "Bahan presentasi mengenai evolusi pemikiran pembangunan serta perkembangan teori-teori pertumbuhan ekonomi sebagai fondasi analisis pembangunan empiris.",
-        tags: ["Ekonomika Pembangunan", "Ekbang II", "Empirik", "Pertumbuhan Ekonomi", "Bab 1"]
-      },
-      {
-        course: "Ekonomi Industri I",
-        title: "Bab 1: Pengantar Organisasi Industri",
-        type: "Slides",
-        week: "Bab 1",
-        updated: "2026-07",
-        url: "https://drive.google.com/file/d/1C_DprfauUj1X6F_PSD6PwDte6_UsiCa2/view?usp=sharing",
-        note: "Bahan presentasi pengantar mengenai ruang lingkup organisasi industri, perilaku perusahaan, struktur pasar, persaingan, dan keterkaitan antara struktur, perilaku, serta kinerja industri.",
-        tags: ["Ekonomi Industri", "Organisasi Industri", "Struktur Pasar", "Bab 1"]
-      }
+    const publications = [
+      {title:"Fiscal Decentralization and Green Development Efficiency: Evidence From the New Capital “Nusantara” Buffer Zone",authors:"MN Fajri, BP Pratama, A Kharisudin",venue:"Bestuurskunde: Journal of Governmental Studies, 3(2), 103–115",year:2023,cited:11,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"The Effects of Social Assistance Programs on Stunting Prevalence Rates in Indonesia",authors:"S Munawaroh, MN Fajri, SR Ajija",venue:"Jurnal Administrasi Kesehatan Indonesia, 12(1), 74–85",year:2024,cited:9,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Regional Branding as an Effort to Promote a Sustainable Environment",authors:"S Munawaroh, MN Fajri",venue:"Jurnal Bina Praja, 15(1), 73–83",year:2023,cited:7,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Kekuatan Pasar dan Stabilitas Dualisme Bank Perkreditan Rakyat Akibat Penetrasi Teknologi Finansial",authors:"MN Fajri",venue:"Jurnal Persaingan Usaha, 2(2), 147–157",year:2022,cited:5,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Exploring sustainable economic growth: Promoting green development productivity through decentralized environmental policy and regional competitiveness",authors:"MN Fajri, S Munawaroh",venue:"The Journal of Indonesia Sustainable Development Planning, 4(3), 246–262",year:2023,cited:4,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"The effect of religiosity level on entrepreneurial sustainability of Muslim millennials: A case study of the Indonesian family life survey",authors:"MN Fajri, S Munawaroh",venue:"Review of Islamic Social Finance and Entrepreneurship, 103–116",year:2023,cited:3,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Does Switching Cost Affect Dual Rural Banks Market Power?",authors:"MN Fajri, R Purwono",venue:"Journal of Developing Economies, 7(2), 251–265",year:2022,cited:3,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Spatial analysis of digital transformation on food security in Sumatra: Amidst climate change",authors:"MN Fajri, BP Pratama, FA Wulandari",venue:"Jurnal Ilmu Ekonomi Terapan, 10(1), 25–43",year:2025,cited:2,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Strategy To Support SDGs: Spatial Analysis of Digital Transformation and Regional Government Competition on Green Development Efficiency in East Java",authors:"MN Fajri",venue:"East Java Economic Journal, 7(2), 173–195",year:2023,cited:2,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"How are people’s business credit and internet marketing navigate micro and small industry performance during covid-19?: Evidence from central java province",authors:"BO Prasetya, MN Fajri",venue:"Business Management Analysis Journal (BMAJ), 6(2), 130–147",year:2023,cited:2,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Analisis Determinan Efisiensi Penggunaan Lahan di Kawasan Indonesia Bagian Barat: Pendekatan Slack Base Model",authors:"MN Fajri, N Istifadah, B Putra",venue:"Jurnal Pertanahan",year:2022,cited:1,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"The Effect of Economic Recovery Budget Efficiency on Price Stability in Indonesia: The Moderating Effect of Covid-19 Fluctuations",authors:"A Kusumawardhani, Moh N Fajri",venue:"JSRET, 4(2)",year:2025,cited:null,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Maintaining Business Ease Through Bank Loans and Digital Transformation on Oil Palm Productivity in Lampung Province: A Polynomial Approach",authors:"MN Fajri, A Kharisudin",venue:"Jurnal Bina Praja, 17(1), 205–222",year:2025,cited:null,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Good Governance and Trade Openness in Navigating Women's Labor Participation in Southeast Asia",authors:"MN Fajri, N Cahayati, SR Ajija, BP Pratama",venue:"Jurnal Ekonomi dan Pembangunan, 32(2), 189–223",year:2024,cited:null,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"IMPACT OF RECENT MIGRATION AND LOCAL INCOME DISPARITY: DOES TIME VARIYING IMPLY?",authors:"MN Fajri, N Istifadah, S Munawaroh, BP Pratama",venue:"Jurnal Ilmu Ekonomi Terapan, 8(2)",year:2023,cited:null,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"How Market Power Affects Potential Bankruptcy Post and During COVID-19: Does Sharia Rural Bank Soundness Matter?",authors:"MN Fajri",venue:"Journal of Southeast Asian Islam and Society, 2(2), 159–174",year:2023,cited:null,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Mengeksplorasi Potensi Pertumbuhan Baru Berkelanjutan: Analisis Spasial Transformasi Digital dan Kompetisi Pemerintah Daerah terhadap Efisiensi Pembangunan Biru di Jawa Tengah",authors:"MN Fajri, F Amilia",venue:"PUSAKA Jawa Tengah, 2 (Agustus 2023)",year:2023,cited:null,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Pengaruh Inovasi Teknologi dan Desentralisasi Fiskal terhadap Efisiensi Pembangunan Hijau: Efek Spasial dan Moderasi Jawa Barat",authors:"MNF Gusnansyah, BP Pratama",venue:"Proceedings of National Conference West Java Economic Society (WJES)",year:2022,cited:null,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Village-Owned Enterprises in Brebes Regency: Governance Gaps, Market Competition, And Pathways to Sustainability",authors:"T Pratysto, FX Sugiyanto, DC Sanjoko, MG Yusuf, MN Fajri",venue:"Journal of Islamic Economy and Community Engagement, 6(2), 152–155",year:2025,cited:null,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]},
+      {title:"Harnessing Zakat to Drive Inclusive Economic Growth: Prospects and Challenges",authors:"MN Fajri, A Kusumawardhani",venue:"Journal Of Middle East and Islamic Studies, 12(1), 1–",year:2025,cited:null,links:[{label:"Scholar",url:"https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao"}]}
     ];
 
-    // ===== RENDER =====
-    const grid = document.getElementById("grid");
+    // Tambahkan working paper yang sudah siap diumumkan ke dalam array ini.
+    // Format: {title, authors, status, year, abstract, links:[{label,url}]}
+    const workingPapers = [];
+
+    // Tambahkan pendanaan penelitian yang sudah siap diumumkan ke dalam array ini.
+    // Format: {title, funder, scheme, year, status, links:[{label,url}]}
+    const researchFunding = [];
+
+    const publishedList = document.getElementById("publishedList");
+    const workingList = document.getElementById("workingList");
+    const fundingList = document.getElementById("fundingList");
     const qEl = document.getElementById("q");
-    const chips = Array.from(document.querySelectorAll(".chip"));
-    let activeCat = "all";
+    const filters = Array.from(document.querySelectorAll(".filter"));
+    const collections = Array.from(document.querySelectorAll("[data-collection]"));
+    let activeFilter = "all";
 
-    function norm(s){ return (s || "").toLowerCase(); }
-
-    function render(){
-      const q = norm(qEl.value);
-      const items = materials
-        .filter(m => activeCat === "all" ? true : m.type === activeCat)
-        .filter(m => {
-          const blob = norm([m.course, m.title, m.type, m.week, (m.tags||[]).join(" "), m.updated].join(" "));
-          return blob.includes(q);
-        });
-
-      if(items.length === 0){
-        grid.innerHTML = `<div class="card" style="grid-column: span 12;">
-          <h3 class="title">Tidak ada hasil</h3>
-          <div class="meta2">Coba ubah kata kunci atau filter kategori.</div>
-        </div>`;
+    function norm(value){ return String(value || "").toLowerCase(); }
+    function paperBlob(item){
+      return norm([item.title,item.authors,item.venue,item.funder,item.scheme,item.status,item.year,item.abstract].join(" "));
+    }
+    function externalLinks(links){
+      return (links || []).map(link => `
+        <a class="linkbtn" href="${link.url}" target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> ${link.label}
+        </a>`).join("");
+    }
+    function renderPublished(items){
+      if(!items.length){
+        publishedList.innerHTML = `<div class="empty"><strong>Tidak ada publikasi yang sesuai.</strong>Coba gunakan kata kunci lain.</div>`;
         return;
       }
-
-      grid.innerHTML = items.map(m => `
-        <article class="card">
-          <div class="head">
-            <div>
-              <h3 class="title">${m.title}</h3>
-              <div class="meta2">
-                <b>${m.course}</b> · ${m.week} · <span style="color: rgba(234,240,255,.62)">Updated: ${m.updated}</span>
-              </div>
+      publishedList.innerHTML = items.map(paper => `
+        <article class="paper">
+          <div>
+            <h3>${paper.title}</h3>
+            <div class="paper-meta"><b>${paper.authors}</b><br>${paper.venue} · <b>${paper.year}</b></div>
+          </div>
+          <div class="paper-actions">
+            <span class="tag"><i class="fa-solid fa-quote-left"></i> Cited: ${paper.cited ?? "—"}</span>
+            ${externalLinks(paper.links)}
+          </div>
+        </article>`).join("");
+    }
+    function renderWorking(items){
+      if(!items.length){
+        workingList.innerHTML = "";
+        return;
+      }
+      workingList.innerHTML = items.map(paper => `
+        <article class="paper">
+          <div>
+            <h3>${paper.title}</h3>
+            <div class="paper-meta"><b>${paper.authors}</b><br>${paper.abstract || ""}</div>
+          </div>
+          <div class="paper-actions">
+            <span class="tag"><i class="fa-regular fa-file-lines"></i> ${paper.status || "Working Paper"}</span>
+            ${paper.year ? `<span class="tag">${paper.year}</span>` : ""}
+            ${externalLinks(paper.links)}
+          </div>
+        </article>`).join("");
+    }
+    function renderFunding(items){
+      if(!items.length){
+        fundingList.innerHTML = "";
+        return;
+      }
+      fundingList.innerHTML = items.map(project => `
+        <article class="paper">
+          <div>
+            <h3>${project.title}</h3>
+            <div class="paper-meta">
+              <b>${project.funder || ""}</b>
+              ${project.scheme ? `<br>${project.scheme}` : ""}
             </div>
-            <span class="tag">${m.type}</span>
           </div>
-
-          <div class="meta2">${m.note || ""}</div>
-
-          <div class="tags">
-            ${(m.tags||[]).map(t => `<span class="tag">${t}</span>`).join("")}
+          <div class="paper-actions">
+            ${project.status ? `<span class="tag"><i class="fa-solid fa-seedling"></i> ${project.status}</span>` : ""}
+            ${project.year ? `<span class="tag">${project.year}</span>` : ""}
+            ${externalLinks(project.links)}
           </div>
+        </article>`).join("");
+    }
+    function render(){
+      const query = norm(qEl.value);
+      const publishedItems = publications
+        .filter(item => paperBlob(item).includes(query))
+        .sort((a,b) => (b.year-a.year) || ((b.cited || 0)-(a.cited || 0)));
+      const workingItems = workingPapers
+        .filter(item => paperBlob(item).includes(query))
+        .sort((a,b) => (b.year || 0)-(a.year || 0));
+      const fundingItems = researchFunding
+        .filter(item => paperBlob(item).includes(query))
+        .sort((a,b) => (b.year || 0)-(a.year || 0));
 
-          <div class="actions">
-            ${m.url
-              ? `<a class="linkbtn" href="${m.url}" target="_blank" rel="noopener">
-                   <i class="fa-brands fa-google-drive"></i> Buka Materi
-                 </a>`
-              : `<span class="linkbtn" style="opacity:.65; cursor:not-allowed;">
-                   <i class="fa-regular fa-clock"></i> Tautan Segera Tersedia
-                 </span>`
-            }
-            <a class="linkbtn" href="mailto:fajrijikhul@lecturer.undip.ac.id?subject=Request%20Teaching%20Material&body=Halo%20Pak%20Fajri,%20saya%20ingin%20meminta%20materi:%20${encodeURIComponent(m.title)}%20(%20${encodeURIComponent(m.course)}%20).">
-              <i class="fa-regular fa-envelope"></i> Hubungi Dosen
-            </a>
-          </div>
-        </article>
-      `).join("");
+      collections.forEach(section => {
+        section.classList.toggle("hidden", activeFilter !== "all" && section.dataset.collection !== activeFilter);
+      });
+      renderPublished(publishedItems);
+      renderWorking(workingItems);
+      renderFunding(fundingItems);
     }
 
-    chips.forEach(ch => {
-      ch.addEventListener("click", () => {
-        chips.forEach(x => x.classList.remove("active"));
-        ch.classList.add("active");
-        activeCat = ch.dataset.cat;
+    filters.forEach(button => {
+      button.addEventListener("click", () => {
+        filters.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
         render();
       });
     });
     qEl.addEventListener("input", render);
 
+    const years = publications.map(item => item.year).filter(Boolean);
+    document.getElementById("publishedCount").textContent = publications.length;
+    document.getElementById("workingCount").textContent = workingPapers.length || "—";
+    document.getElementById("fundingCount").textContent = researchFunding.length || "—";
+    document.getElementById("yearRange").textContent = years.length ? `${Math.min(...years)}–${Math.max(...years)}` : "—";
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const ham = document.getElementById("ham");
+    const navlinks = document.getElementById("navlinks");
+    function closeMenu(){
+      if(!ham || !navlinks) return;
+      navlinks.classList.remove("open");
+      ham.setAttribute("aria-expanded","false");
+      ham.setAttribute("aria-label","Buka menu navigasi");
+    }
+    if(ham && navlinks){
+      ham.addEventListener("click",() => {
+        const isOpen = navlinks.classList.toggle("open");
+        ham.setAttribute("aria-expanded",String(isOpen));
+        ham.setAttribute("aria-label",isOpen ? "Tutup menu navigasi" : "Buka menu navigasi");
+      });
+      navlinks.querySelectorAll("a").forEach(link => link.addEventListener("click",closeMenu));
+      document.addEventListener("click",event => {
+        if(!navlinks.contains(event.target) && !ham.contains(event.target)) closeMenu();
+      });
+      document.addEventListener("keydown",event => {
+        if(event.key === "Escape"){ closeMenu(); ham.focus(); }
+      });
+      window.addEventListener("resize",() => {
+        if(window.innerWidth > 980) closeMenu();
+      });
+    }
+
     render();
   </script>
 </body>
