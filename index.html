@@ -83,12 +83,13 @@
     }
 
     .navlinks{
-      display:flex; align-items:center; gap: 10px;
+      display:flex; align-items:center; gap: 5px;
       font-weight: 650;
+      font-size: 13px;
       color: var(--muted);
     }
     .navlinks a{
-      padding: 10px 10px;
+      padding: 9px 7px;
       border-radius: 12px;
       transition: .2s ease;
     }
@@ -102,9 +103,6 @@
       border: 1px solid rgba(255,255,255,.12);
     }
 
-    .nav-cta{
-      display:flex; align-items:center; gap: 10px;
-    }
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap: 10px;
@@ -499,14 +497,13 @@
     @media (max-width: 1080px){
       .social-rail{ display:none; }
     }
-    @media (max-width: 980px){
+    @media (max-width: 1120px){
       .hero-grid{ grid-template-columns: 1fr; }
       .profile{ justify-self:start; }
       .grid-3{ grid-template-columns: 1fr; }
       .grid-2{ grid-template-columns: 1fr; }
       .pub{ grid-template-columns: 1fr; }
       .pub .links{ justify-content:flex-start; min-width: auto; }
-      .nav-cta{ display:none; }
       .hamburger{ display:flex; }
       .navlinks{
         position:absolute;
@@ -599,17 +596,15 @@
       <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
         <a class="active" href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#publications">Publications</a>
+        <a href="publications.html">Publications</a>
         <a href="teaching.html">Teaching</a>
         <a href="video.html">Video</a>
+        <a href="opinion.html">Opinion</a>
+        <a href="supervision.html">Supervision</a>
         <a href="#community">Community</a>
         <a href="#contact">Contact</a>
+        <a href="announcement.html">Announcement</a>
       </nav>
-
-      <div class="nav-cta">
-        <a class="btn" href="mailto:fajrijikhul@lecturer.undip.ac.id"><i class="fa-regular fa-paper-plane"></i> Email</a>
-        <a class="btn primary" href="#publications"><i class="fa-solid fa-book"></i> Papers</a>
-      </div>
     </div>
   </header>
 
@@ -633,7 +628,7 @@
 
         <div class="hero-actions">
           <a class="btn primary" href="mailto:fajrijikhul@lecturer.undip.ac.id"><i class="fa-solid fa-handshake"></i> Hire / Collaborate</a>
-          <a class="btn" href="#publications"><i class="fa-solid fa-arrow-right"></i> View Publications</a>
+          <a class="btn" href="publications.html"><i class="fa-solid fa-arrow-right"></i> View Publications</a>
         </div>
 
         <div class="meta">
@@ -696,84 +691,6 @@
         <div class="card">
           <strong>Outputs</strong>
           <p>Journal articles, conference papers, policy notes, and data products (dashboards & applied analytics).</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PUBLICATIONS -->
-    <section id="publications">
-      <div class="section-head">
-        <div>
-          <h2>Publications</h2>
-          <p>Daftar paper pilihan. Gunakan search + filter tahun.</p>
-        </div>
-      </div>
-
-      <div class="pub-controls">
-        <div class="search" role="search">
-          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-          <input id="q" type="search" placeholder="Search title / journal / year..." autocomplete="off" />
-        </div>
-
-        <div class="chips" aria-label="Filters">
-          <span class="chip active" data-year="all">All</span>
-          <span class="chip" data-year="2025">2025</span>
-          <span class="chip" data-year="2024">2024</span>
-          <span class="chip" data-year="2023">2023</span>
-          <span class="chip" data-year="2022">2022</span>
-        </div>
-      </div>
-
-      <div id="pubList" class="pub-list" aria-live="polite"></div>
-
-      <div style="margin-top:12px; color: var(--muted2); font-size:13px; line-height:1.65;">
-        <b>Catatan:</b> Link DOI/Publisher/PDF di bawah ini saya isi berdasarkan template umum. Jika ada link yang ingin Anda pastikan akurat,
-        cukup kirim URL resminya (DOI/publisher/PDF) dan saya update.
-      </div>
-    </section>
-
-    <!-- TEACHING -->
-    <section id="teaching">
-      <div class="section-head">
-        <div>
-          <h2>Teaching</h2>
-          <p>Daftar mata kuliah yang diajarkan.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <strong>Pengajaran</strong>
-          <ol class="list">
-            <li>Pengantar Teori Ekonomi Mikro</li>
-            <li>Pengantar Teori Ekonomi Makro</li>
-            <li>Matematika Ekonomi I</li>
-            <li>Teori Ekonomi Mikro I</li>
-            <li>Teori Ekonomi Makro I</li>
-            <li>Ekonometrika I</li>
-            <li>Ekonometrika II</li>
-            <li>Ekonomi Industri I</li>
-            <li>Ekonomi Moneter I</li>
-            <li>Ekonomi Internasional I</li>
-            <li>Ekonomi Pembangunan II</li>
-            <li>Ekonomi Moneter Internasional</li>
-            <li>Perekonomian Indonesia</li>
-          </ol>
-        </div>
-
-        <div class="card">
-          <strong>Academic Focus</strong>
-          <p>
-            Materi pengajaran menekankan kombinasi konsep inti ekonomi, metode kuantitatif, serta aplikasi empiris untuk
-            analisis kebijakan dan isu pembangunan.
-          </p>
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <span class="pill">Micro & Macro</span>
-            <span class="pill">Math Econ</span>
-            <span class="pill">Econometrics</span>
-            <span class="pill">Industrial Org</span>
-            <span class="pill">International</span>
-          </div>
         </div>
       </div>
     </section>
@@ -900,274 +817,11 @@
       });
 
       window.addEventListener("resize", () => {
-        if(window.innerWidth > 980) closeMenu();
+        if(window.innerWidth > 1120) closeMenu();
       });
     }
-
-    // ====== PUBLICATIONS DATA ======
-    // Anda bisa update link DOI/Publisher/PDF per item.
-    const publications = [
-      {
-        title: "Fiscal Decentralization and Green Development Efficiency: Evidence From the New Capital “Nusantara” Buffer Zone",
-        authors: "MN Fajri, BP Pratama, A Kharisudin",
-        venue: "Bestuurskunde: Journal of Governmental Studies, 3(2), 103–115",
-        year: 2023,
-        cited: 11,
-        links: [
-          // GANTI jika punya link resmi yang pasti
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "The Effects of Social Assistance Programs on Stunting Prevalence Rates in Indonesia",
-        authors: "S Munawaroh, MN Fajri, SR Ajija",
-        venue: "Jurnal Administrasi Kesehatan Indonesia, 12(1), 74–85",
-        year: 2024,
-        cited: 9,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Regional Branding as an Effort to Promote a Sustainable Environment",
-        authors: "S Munawaroh, MN Fajri",
-        venue: "Jurnal Bina Praja, 15(1), 73–83",
-        year: 2023,
-        cited: 7,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Kekuatan Pasar dan Stabilitas Dualisme Bank Perkreditan Rakyat Akibat Penetrasi Teknologi Finansial",
-        authors: "MN Fajri",
-        venue: "Jurnal Persaingan Usaha, 2(2), 147–157",
-        year: 2022,
-        cited: 5,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Exploring sustainable economic growth: Promoting green development productivity through decentralized environmental policy and regional competitiveness",
-        authors: "MN Fajri, S Munawaroh",
-        venue: "The Journal of Indonesia Sustainable Development Planning, 4(3), 246–262",
-        year: 2023,
-        cited: 4,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "The effect of religiosity level on entrepreneurial sustainability of Muslim millennials: A case study of the Indonesian family life survey",
-        authors: "MN Fajri, S Munawaroh",
-        venue: "Review of Islamic Social Finance and Entrepreneurship, 103–116",
-        year: 2023,
-        cited: 3,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Does Switching Cost Affect Dual Rural Banks Market Power?",
-        authors: "MN Fajri, R Purwono",
-        venue: "Journal of Developing Economies, 7(2), 251–265",
-        year: 2022,
-        cited: 3,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Spatial analysis of digital transformation on food security in Sumatra: Amidst climate change",
-        authors: "MN Fajri, BP Pratama, FA Wulandari",
-        venue: "Jurnal Ilmu Ekonomi Terapan, 10(1), 25–43",
-        year: 2025,
-        cited: 2,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Strategy To Support SDGs: Spatial Analysis of Digital Transformation and Regional Government Competition on Green Development Efficiency in East Java",
-        authors: "MN Fajri",
-        venue: "East Java Economic Journal, 7(2), 173–195",
-        year: 2023,
-        cited: 2,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "How are people’s business credit and internet marketing navigate micro and small industry performance during covid-19?: Evidence from central java province",
-        authors: "BO Prasetya, MN Fajri",
-        venue: "Business Management Analysis Journal (BMAJ), 6(2), 130–147",
-        year: 2023,
-        cited: 2,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Analisis Determinan Efisiensi Penggunaan Lahan di Kawasan Indonesia Bagian Barat: Pendekatan Slack Base Model",
-        authors: "MN Fajri, N Istifadah, B Putra",
-        venue: "Jurnal Pertanahan",
-        year: 2022,
-        cited: 1,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "The Effect of Economic Recovery Budget Efficiency on Price Stability in Indonesia: The Moderating Effect of Covid-19 Fluctuations",
-        authors: "A Kusumawardhani, Moh N Fajri",
-        venue: "JSRET, 4(2)",
-        year: 2025,
-        cited: null,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Maintaining Business Ease Through Bank Loans and Digital Transformation on Oil Palm Productivity in Lampung Province: A Polynomial Approach",
-        authors: "MN Fajri, A Kharisudin",
-        venue: "Jurnal Bina Praja, 17(1), 205–222",
-        year: 2025,
-        cited: null,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Good Governance and Trade Openness in Navigating Women's Labor Participation in Southeast Asia",
-        authors: "MN Fajri, N Cahayati, SR Ajija, BP Pratama",
-        venue: "Jurnal Ekonomi dan Pembangunan, 32(2), 189–223",
-        year: 2024,
-        cited: null,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "IMPACT OF RECENT MIGRATION AND LOCAL INCOME DISPARITY: DOES TIME VARIYING IMPLY?",
-        authors: "MN Fajri, N Istifadah, S Munawaroh, BP Pratama",
-        venue: "Jurnal Ilmu Ekonomi Terapan, 8(2)",
-        year: 2023,
-        cited: null,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "How Market Power Affects Potential Bankruptcy Post and During COVID-19: Does Sharia Rural Bank Soundness Matter?",
-        authors: "MN Fajri",
-        venue: "Journal of Southeast Asian Islam and Society, 2(2), 159–174",
-        year: 2023,
-        cited: null,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Mengeksplorasi Potensi Pertumbuhan Baru Berkelanjutan: Analisis Spasial Transformasi Digital dan Kompetisi Pemerintah Daerah terhadap Efisiensi Pembangunan Biru di Jawa Tengah",
-        authors: "MN Fajri, F Amilia",
-        venue: "PUSAKA Jawa Tengah, 2 (Agustus 2023)",
-        year: 2023,
-        cited: null,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Pengaruh Inovasi Teknologi dan Desentralisasi Fiskal terhadap Efisiensi Pembangunan Hijau: Efek Spasial dan Moderasi Jawa Barat",
-        authors: "MNF Gusnansyah, BP Pratama",
-        venue: "Proceedings of National Conference West Java Economic Society (WJES)",
-        year: 2022,
-        cited: null,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Village-Owned Enterprises in Brebes Regency: Governance Gaps, Market Competition, And Pathways to Sustainability",
-        authors: "T Pratysto, FX Sugiyanto, DC Sanjoko, MG Yusuf, MN Fajri",
-        venue: "Journal of Islamic Economy and Community Engagement, 6(2), 152–155",
-        year: 2025,
-        cited: null,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      },
-      {
-        title: "Harnessing Zakat to Drive Inclusive Economic Growth: Prospects and Challenges",
-        authors: "MN Fajri, A Kusumawardhani",
-        venue: "Journal Of Middle East and Islamic Studies, 12(1), 1–",
-        year: 2025,
-        cited: null,
-        links: [
-          { label: "Scholar", url: "https://scholar.google.com/citations?user=nzzi2AYAAAAJ&hl=id&oi=ao" }
-        ]
-      }
-    ];
-
-    const listEl = document.getElementById("pubList");
-    const qEl = document.getElementById("q");
-    const chips = Array.from(document.querySelectorAll(".chip"));
-    let activeYear = "all";
-
-    function norm(s){ return (s || "").toLowerCase(); }
-
-    function render(){
-      const q = norm(qEl.value);
-      const items = publications
-        .filter(p => activeYear === "all" ? true : String(p.year) === activeYear)
-        .filter(p => {
-          const blob = norm([p.title, p.authors, p.venue, p.year].join(" "));
-          return blob.includes(q);
-        })
-        .sort((a,b) => (b.year - a.year) || ((b.cited||0) - (a.cited||0)));
-
-      listEl.innerHTML = items.map(p => `
-        <article class="pub">
-          <div>
-            <h3>${p.title}</h3>
-            <div class="meta2">
-              <b>${p.authors}</b><br>
-              ${p.venue} · <b>${p.year}</b>
-            </div>
-          </div>
-          <div class="links">
-            ${p.cited !== null && p.cited !== undefined
-              ? `<span class="tag"><i class="fa-solid fa-quote-left"></i> Cited: ${p.cited}</span>`
-              : `<span class="tag"><i class="fa-solid fa-quote-left"></i> Cited: —</span>`
-            }
-            ${(p.links || []).map(l => `
-              <a class="linkbtn" href="${l.url}" target="_blank" rel="noopener">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> ${l.label}
-              </a>
-            `).join("")}
-          </div>
-        </article>
-      `).join("");
-
-      if(items.length === 0){
-        listEl.innerHTML = `<div class="card"><strong>No results</strong><p>Coba kata kunci lain atau pilih filter tahun.</p></div>`;
-      }
-    }
-
-    chips.forEach(ch => {
-      ch.addEventListener("click", () => {
-        chips.forEach(x => x.classList.remove("active"));
-        ch.classList.add("active");
-        activeYear = ch.dataset.year;
-        render();
-      });
-    });
-
-    qEl.addEventListener("input", render);
 
     document.getElementById("year").textContent = new Date().getFullYear();
-    render();
   </script>
 </body>
 </html>
