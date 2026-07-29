@@ -340,8 +340,9 @@
       <p class="sub">
         Halaman ini memuat materi kuliah, modul, bahan presentasi, dataset, tugas,
         rubrik, dan berbagai kit pembelajaran untuk mendukung proses perkuliahan.
-        Saat ini materi yang tersedia berasal dari mata kuliah Matematika Ekonomi I,
-        sedangkan materi dari mata kuliah lainnya akan ditambahkan secara bertahap.
+        Saat ini tersedia bahan presentasi untuk mata kuliah Matematika Ekonomi I
+        dan Statistika Ekonomi dan Bisnis I. Materi dari mata kuliah lainnya
+        akan ditambahkan secara bertahap.
       </p>
 
       <div class="meta">
@@ -382,12 +383,22 @@
       {
         course: "Matematika Ekonomi I",
         title: "Bab 1: Fundamental Berpikir Matematika Ekonomi",
-        type: "Modul",
+        type: "Slides",
         week: "Bab 1",
         updated: "2026-07",
         url: "https://drive.google.com/file/d/1KAZCsViiasU6ML7YiXXvzt28Ym_2yWYu/view?usp=sharing",
-        note: "Materi pengantar untuk membangun fondasi berpikir matematis dalam memahami dan memodelkan persoalan ekonomi.",
+        note: "Bahan presentasi pengantar untuk membangun fondasi berpikir matematis dalam memahami dan memodelkan persoalan ekonomi.",
         tags: ["Matematika Ekonomi", "Fundamental", "Bab 1"]
+      },
+      {
+        course: "Statistika Ekonomi dan Bisnis I",
+        title: "Bab 1: Dasar dan Fundamental Statistik, Data, serta Pengambilan Keputusan",
+        type: "Slides",
+        week: "Bab 1",
+        updated: "2026-07",
+        url: "https://drive.google.com/file/d/1GZBj0DulI23_J8v4qPRM5xmva2d5xvvd/view?usp=sharing",
+        note: "Bahan presentasi mengenai konsep dasar statistik dan statistika, data dan variabel, statistika deskriptif dan inferensial, tingkat pengukuran, serta peran statistika dalam pengambilan keputusan ekonomi dan bisnis.",
+        tags: ["Statistika Ekonomi dan Bisnis", "Data", "Pengambilan Keputusan", "Bab 1"]
       }
     ];
 
@@ -435,9 +446,14 @@
           </div>
 
           <div class="actions">
-            <a class="linkbtn" href="${m.url}" target="_blank" rel="noopener">
-              <i class="fa-brands fa-google-drive"></i> Buka Materi
-            </a>
+            ${m.url
+              ? `<a class="linkbtn" href="${m.url}" target="_blank" rel="noopener">
+                   <i class="fa-brands fa-google-drive"></i> Buka Materi
+                 </a>`
+              : `<span class="linkbtn" style="opacity:.65; cursor:not-allowed;">
+                   <i class="fa-regular fa-clock"></i> Tautan Segera Tersedia
+                 </span>`
+            }
             <a class="linkbtn" href="mailto:fajrijikhul@lecturer.undip.ac.id?subject=Request%20Teaching%20Material&body=Halo%20Pak%20Fajri,%20saya%20ingin%20meminta%20materi:%20${encodeURIComponent(m.title)}%20(%20${encodeURIComponent(m.course)}%20).">
               <i class="fa-regular fa-envelope"></i> Hubungi Dosen
             </a>
