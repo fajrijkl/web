@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Supervision — Moh Najikhul Fajri" />
+  <title>Supervision | Moh Najikhul Fajri</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root{
+      --bg0:#070A14;
+      --bg1:#0B1026;
+      --text:#EAF0FF;
+      --muted:rgba(234,240,255,.72);
+      --a:#55D6FF;
+      --b:#B66BFF;
+      --c:#FF4FD8;
+      --max:1120px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      min-height:100svh;
+      overflow-x:hidden;
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(900px 520px at 12% 18%,rgba(85,214,255,.18),transparent 55%),
+        radial-gradient(900px 520px at 88% 30%,rgba(255,79,216,.14),transparent 55%),
+        radial-gradient(1000px 700px at 60% 100%,rgba(182,107,255,.14),transparent 55%),
+        linear-gradient(180deg,var(--bg0),var(--bg1));
+    }
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:min(var(--max),calc(100% - 40px)); margin:0 auto; }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg,rgba(7,10,20,.78),rgba(7,10,20,.35));
+      backdrop-filter:blur(12px);
+    }
+    .nav-inner{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+      max-width:calc(100% - 60px);
+      font-weight:900;
+      letter-spacing:.2px;
+      user-select:none;
+    }
+    .brand span:last-child{
+      font-size:clamp(13.5px,2vw,16px);
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .dot{
+      width:10px;
+      height:10px;
+      flex:0 0 10px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--a),var(--c));
+      box-shadow:0 0 24px rgba(255,79,216,.45);
+    }
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      color:var(--muted);
+      font-weight:650;
+      font-size:13px;
+    }
+    .navlinks a{
+      padding:9px 7px;
+      border-radius:12px;
+      transition:.2s ease;
+    }
+    .navlinks a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.06);
+    }
+    .navlinks a.active{
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+    }
+    .hamburger{
+      display:none;
+      width:44px;
+      height:44px;
+      flex:0 0 44px;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:6px;
+      padding:10px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      color:var(--text);
+      background:rgba(255,255,255,.06);
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
+      cursor:pointer;
+      transition:background .18s ease,border-color .18s ease,transform .18s ease;
+    }
+    .hamburger:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.22);
+      background:rgba(255,255,255,.10);
+    }
+    .hamburger span{
+      display:block;
+      width:20px;
+      height:2px;
+      border-radius:99px;
+      background:rgba(255,255,255,.9);
+      transition:transform .2s ease,opacity .2s ease;
+    }
+    .hamburger[aria-expanded="true"] span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+
+    .page{
+      display:flex;
+      min-height:calc(100svh - 73px);
+      flex-direction:column;
+      padding:36px 0 0;
+    }
+    .hero-card{
+      position:relative;
+      overflow:hidden;
+      padding:22px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:26px;
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.04));
+      box-shadow:0 18px 60px rgba(0,0,0,.45);
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      z-index:0;
+      pointer-events:none;
+      background:
+        radial-gradient(700px 350px at 18% 10%,rgba(85,214,255,.18),transparent 55%),
+        radial-gradient(600px 340px at 90% 80%,rgba(255,79,216,.14),transparent 55%);
+    }
+    .hero-card > *{ position:relative; z-index:1; }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+      color:var(--muted);
+      background:rgba(255,255,255,.06);
+      font-weight:700;
+    }
+    h1{
+      margin:12px 0 8px;
+      font-size:clamp(28px,4vw,46px);
+      line-height:1.08;
+      letter-spacing:-.025em;
+    }
+    .sub{
+      max-width:82ch;
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+    .content-space{ min-height:180px; }
+    footer{
+      margin-top:auto;
+      padding:26px 0 40px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(234,240,255,.55);
+    }
+
+    @media (max-width:1120px){
+      .hamburger{ display:flex; }
+      .navlinks{
+        position:absolute;
+        top:calc(100% + 10px);
+        right:0;
+        display:none;
+        width:min(390px,100%);
+        max-height:calc(100svh - 90px);
+        overflow-y:auto;
+        flex-direction:column;
+        align-items:stretch;
+        gap:7px;
+        padding:12px;
+        border:1px solid rgba(255,255,255,.14);
+        border-radius:20px;
+        background:linear-gradient(180deg,rgba(11,16,38,.98),rgba(7,10,20,.96));
+        box-shadow:0 24px 70px rgba(0,0,0,.55);
+        backdrop-filter:blur(18px);
+      }
+      .navlinks.open{ display:flex; animation:menuIn .18s ease both; }
+      .navlinks a{
+        display:flex;
+        align-items:center;
+        min-height:46px;
+        padding:12px 14px;
+        border:1px solid rgba(255,255,255,.09);
+        background:rgba(255,255,255,.045);
+      }
+      .navlinks a:hover{
+        border-color:rgba(255,255,255,.16);
+        background:rgba(255,255,255,.09);
+      }
+      .navlinks a.active{
+        border-color:rgba(255,255,255,.20);
+        background:linear-gradient(135deg,rgba(255,79,216,.20),rgba(85,214,255,.14));
+      }
+    }
+    @keyframes menuIn{
+      from{ opacity:0; transform:translateY(-8px) scale(.98); }
+      to{ opacity:1; transform:translateY(0) scale(1); }
+    }
+    @media (max-width:560px){
+      .container{ width:min(var(--max),calc(100% - 28px)); }
+      .brand{ gap:8px; }
+      .brand span:last-child{ font-size:clamp(12.5px,4vw,14px); }
+      .page{ padding-top:24px; }
+      .hero-card{ padding:17px; border-radius:22px; }
+      .navlinks{ width:100%; }
+    }
+    @media (prefers-reduced-motion:reduce){
+      .navlinks.open{ animation:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Moh Najikhul Fajri — Home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Moh Najikhul Fajri</span>
+      </a>
+
+      <button class="hamburger" id="ham" type="button"
+              aria-label="Buka menu navigasi"
+              aria-controls="navlinks"
+              aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="video.html">Video</a>
+        <a href="opinion.html">Opinion</a>
+        <a class="active" href="supervision.html">Supervision</a>
+        <a href="index.html#community">Community</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="announcement.html">Announcement</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="hero-card">
+      <div class="kicker"><i class="fa-solid fa-user-graduate"></i> Academic Guidance</div>
+      <h1>Supervision</h1>
+      <p class="sub">
+        Halaman untuk informasi pembimbingan akademik dan penelitian, termasuk skripsi,
+        proyek riset mahasiswa, serta kegiatan pendampingan ilmiah.
+      </p>
+    </section>
+
+    <section class="content-space" aria-label="Daftar pembimbingan"></section>
+
+    <footer>© <span id="year"></span> Moh Najikhul Fajri · Supervision</footer>
+  </main>
+
+  <script>
+    const ham = document.getElementById("ham");
+    const navlinks = document.getElementById("navlinks");
+    function closeMenu(){
+      if(!ham || !navlinks) return;
+      navlinks.classList.remove("open");
+      ham.setAttribute("aria-expanded","false");
+      ham.setAttribute("aria-label","Buka menu navigasi");
+    }
+    if(ham && navlinks){
+      ham.addEventListener("click",() => {
+        const isOpen = navlinks.classList.toggle("open");
+        ham.setAttribute("aria-expanded",String(isOpen));
+        ham.setAttribute("aria-label",isOpen ? "Tutup menu navigasi" : "Buka menu navigasi");
+      });
+      navlinks.querySelectorAll("a").forEach(link => link.addEventListener("click",closeMenu));
+      document.addEventListener("click",event => {
+        if(!navlinks.contains(event.target) && !ham.contains(event.target)) closeMenu();
+      });
+      document.addEventListener("keydown",event => {
+        if(event.key === "Escape"){ closeMenu(); ham.focus(); }
+      });
+      window.addEventListener("resize",() => {
+        if(window.innerWidth > 1120) closeMenu();
+      });
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
