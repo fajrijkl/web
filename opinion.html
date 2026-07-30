@@ -184,7 +184,155 @@
       color:var(--muted);
       line-height:1.75;
     }
-    .content-space{ min-height:180px; }
+    .opinion-list{
+      display:grid;
+      gap:16px;
+      padding:24px 0 32px;
+    }
+    .media-card{
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:180px minmax(0,1fr);
+      gap:22px;
+      padding:22px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      background:
+        radial-gradient(560px 300px at 0% 0%,rgba(85,214,255,.13),transparent 60%),
+        linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.035));
+      box-shadow:0 16px 48px rgba(0,0,0,.30);
+    }
+    .media-visual{
+      position:relative;
+      display:flex;
+      min-height:210px;
+      flex-direction:column;
+      justify-content:space-between;
+      padding:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:20px;
+      background:
+        radial-gradient(180px 160px at 100% 0%,rgba(255,79,216,.22),transparent 70%),
+        linear-gradient(145deg,rgba(85,214,255,.18),rgba(182,107,255,.13));
+    }
+    .media-visual.tempo{
+      background:
+        radial-gradient(180px 160px at 100% 0%,rgba(255,79,216,.18),transparent 70%),
+        linear-gradient(145deg,rgba(218,48,57,.24),rgba(182,107,255,.12));
+    }
+    .media-visual.tempo .media-icon{
+      color:#ffd9dc;
+      background:rgba(85,9,16,.24);
+    }
+    .media-visual.tribun{
+      background:
+        radial-gradient(180px 160px at 100% 0%,rgba(255,164,66,.22),transparent 70%),
+        linear-gradient(145deg,rgba(43,126,255,.25),rgba(85,214,255,.10));
+    }
+    .media-visual.tribun .media-icon{
+      color:#d9ebff;
+      background:rgba(8,40,96,.28);
+    }
+    .media-visual::after{
+      content:"";
+      position:absolute;
+      right:-28px;
+      bottom:-34px;
+      width:130px;
+      height:130px;
+      border:20px solid rgba(255,255,255,.045);
+      border-radius:50%;
+    }
+    .media-icon{
+      display:grid;
+      width:52px;
+      height:52px;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:16px;
+      background:rgba(7,10,20,.30);
+      font-size:21px;
+    }
+    .media-country{
+      position:relative;
+      z-index:1;
+      color:rgba(234,240,255,.74);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .media-content{
+      display:flex;
+      min-width:0;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+    }
+    .media-type{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+      color:#bfeeff;
+      background:rgba(85,214,255,.075);
+      font-size:11.5px;
+      font-weight:800;
+    }
+    .media-card h2{
+      margin:12px 0 9px;
+      font-size:clamp(22px,3vw,31px);
+      line-height:1.2;
+      letter-spacing:-.025em;
+    }
+    .media-summary{
+      max-width:74ch;
+      margin:0;
+      color:var(--muted);
+      line-height:1.72;
+    }
+    .media-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:15px;
+    }
+    .meta-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:8px 10px;
+      border:1px solid rgba(255,255,255,.11);
+      border-radius:12px;
+      color:rgba(234,240,255,.72);
+      background:rgba(255,255,255,.04);
+      font-size:12px;
+      font-weight:700;
+    }
+    .article-btn{
+      display:inline-flex;
+      min-height:43px;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      margin-top:16px;
+      padding:10px 14px;
+      border:1px solid transparent;
+      border-radius:14px;
+      color:#071020;
+      background:linear-gradient(135deg,var(--c),var(--a));
+      font-size:13px;
+      font-weight:850;
+      transition:transform .18s ease,filter .18s ease;
+    }
+    .article-btn:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.06);
+    }
     footer{
       margin-top:auto;
       padding:26px 0 40px;
@@ -241,6 +389,15 @@
       .page{ padding-top:24px; }
       .hero-card{ padding:17px; border-radius:22px; }
       .navlinks{ width:100%; }
+      .opinion-list{ padding-top:16px; }
+      .media-card{
+        grid-template-columns:1fr;
+        gap:16px;
+        padding:16px;
+        border-radius:21px;
+      }
+      .media-visual{ min-height:150px; }
+      .article-btn{ width:100%; }
     }
     @media (prefers-reduced-motion:reduce){
       .navlinks.open{ animation:none; }
@@ -288,7 +445,99 @@
       </p>
     </section>
 
-    <section class="content-space" aria-label="Daftar tulisan opini"></section>
+    <section class="opinion-list" aria-label="Daftar tulisan opini dan wawancara media">
+      <article class="media-card">
+        <div class="media-visual tribun" aria-hidden="true">
+          <span class="media-icon"><i class="fa-solid fa-chart-line"></i></span>
+          <span class="media-country"><i class="fa-solid fa-location-dot"></i> Indonesia</span>
+        </div>
+
+        <div class="media-content">
+          <span class="media-type"><i class="fa-solid fa-microphone-lines"></i> Media Interview</span>
+          <h2>Trump Terapkan Tarif Baru 10 Persen ke Indonesia, Pakar dari Undip Ungkap Dampaknya untuk Target PDB</h2>
+          <p class="media-summary">
+            Wawancara Tribunnews dengan Moh Najikhul Fajri mengenai penerapan tarif baru
+            Amerika Serikat sebesar 10 persen terhadap Indonesia dan implikasinya bagi
+            pencapaian target produk domestik bruto.
+          </p>
+
+          <div class="media-meta" aria-label="Informasi publikasi">
+            <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> Tribunnews.com</span>
+            <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 29 Juli 2026</span>
+            <span class="meta-chip"><i class="fa-solid fa-location-dot"></i> Media Indonesia</span>
+            <span class="meta-chip"><i class="fa-solid fa-pen-nib"></i> Penulis: Bobby W</span>
+            <span class="meta-chip"><i class="fa-solid fa-user-pen"></i> Editor: Wahyu Gilang Putranto</span>
+          </div>
+
+          <a class="article-btn"
+             href="https://www.tribunnews.com/internasional/7861044/trump-terapkan-tarif-baru-10-persen-ke-indonesia-pengamat-undip-ungkap-dampaknya-untuk-target-pdb"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Baca Artikel Tribunnews
+          </a>
+        </div>
+      </article>
+
+      <article class="media-card">
+        <div class="media-visual tempo" aria-hidden="true">
+          <span class="media-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+          <span class="media-country"><i class="fa-solid fa-location-dot"></i> Indonesia</span>
+        </div>
+
+        <div class="media-content">
+          <span class="media-type"><i class="fa-solid fa-check-double"></i> Fact-Check Interview</span>
+          <h2>Menyesatkan: Rupiah Harus Melemah agar Indonesia Maju</h2>
+          <p class="media-summary">
+            Wawancara Cek Fakta Tempo yang membahas klaim mengenai pelemahan rupiah.
+            Melemahnya nilai tukar rupiah justru menambah beban ekonomi pemerintah
+            dan masyarakat.
+          </p>
+
+          <div class="media-meta" aria-label="Informasi publikasi">
+            <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> Tempo Cek Fakta</span>
+            <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 13 Juni 2026</span>
+            <span class="meta-chip"><i class="fa-solid fa-location-dot"></i> Media Indonesia</span>
+          </div>
+
+          <a class="article-btn"
+             href="https://www.tempo.co/cekfakta/menyesatkan-rupiah-harus-melemah-agar-indonesia-maju-2268915"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Baca Artikel Tempo
+          </a>
+        </div>
+      </article>
+
+      <article class="media-card">
+        <div class="media-visual" aria-hidden="true">
+          <span class="media-icon"><i class="fa-solid fa-wallet"></i></span>
+          <span class="media-country"><i class="fa-solid fa-globe-europe"></i> France</span>
+        </div>
+
+        <div class="media-content">
+          <span class="media-type"><i class="fa-solid fa-microphone-lines"></i> International Media Interview</span>
+          <h2>E-wallets Are All the Rage in Indonesia</h2>
+          <p class="media-summary">
+            Wawancara Le Parisien Matin dengan Moh Najikhul Fajri mengenai perkembangan
+            pesat dompet elektronik di Indonesia, perubahan perilaku pembayaran masyarakat,
+            serta dinamika ekonomi digital nasional.
+          </p>
+
+          <div class="media-meta" aria-label="Informasi publikasi">
+            <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> Le Parisien Matin</span>
+            <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 23 Juli 2025</span>
+            <span class="meta-chip"><i class="fa-solid fa-language"></i> French Media</span>
+          </div>
+
+          <a class="article-btn"
+             href="https://leparisienmatin.fr/les-portefeuilles-electroniques/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Baca Artikel Asli
+          </a>
+        </div>
+      </article>
+    </section>
 
     <footer>© <span id="year"></span> Moh Najikhul Fajri · Opinion</footer>
   </main>
