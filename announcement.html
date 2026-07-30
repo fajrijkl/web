@@ -184,7 +184,164 @@
       color:var(--muted);
       line-height:1.75;
     }
-    .content-space{ min-height:180px; }
+    .announcement-list{
+      display:grid;
+      gap:16px;
+      padding:24px 0 32px;
+    }
+    .announcement-card{
+      position:relative;
+      overflow:hidden;
+      padding:22px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      background:
+        radial-gradient(600px 300px at 0% 0%,rgba(85,214,255,.12),transparent 58%),
+        linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.035));
+      box-shadow:0 16px 48px rgba(0,0,0,.30);
+    }
+    .announcement-card::after{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:4px;
+      background:linear-gradient(180deg,var(--a),var(--b),var(--c));
+    }
+    .announcement-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .announcement-heading{
+      display:flex;
+      min-width:0;
+      align-items:flex-start;
+      gap:14px;
+    }
+    .announcement-icon{
+      display:grid;
+      width:48px;
+      height:48px;
+      flex:0 0 48px;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:15px;
+      color:#d8f4ff;
+      background:linear-gradient(135deg,rgba(85,214,255,.17),rgba(182,107,255,.14));
+      font-size:18px;
+    }
+    .announcement-card h2{
+      margin:0 0 7px;
+      font-size:clamp(20px,2.5vw,28px);
+      line-height:1.22;
+      letter-spacing:-.02em;
+    }
+    .eyebrow{
+      margin:0 0 7px;
+      color:#9bdfff;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .summary{
+      max-width:80ch;
+      margin:0;
+      color:var(--muted);
+      line-height:1.72;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      flex:0 0 auto;
+      padding:8px 11px;
+      border:1px solid rgba(255,135,135,.23);
+      border-radius:999px;
+      color:#ffcaca;
+      background:rgba(255,96,96,.09);
+      font-size:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .status-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#ff8080;
+      box-shadow:0 0 12px rgba(255,128,128,.55);
+    }
+    .announcement-meta{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
+    }
+    .meta-item{
+      padding:13px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      background:rgba(255,255,255,.038);
+    }
+    .meta-label{
+      display:block;
+      margin-bottom:5px;
+      color:rgba(234,240,255,.52);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .meta-value{
+      color:rgba(234,240,255,.90);
+      font-size:13px;
+      font-weight:700;
+      line-height:1.5;
+    }
+    .announcement-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+    .action-btn{
+      display:inline-flex;
+      min-height:43px;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:10px 14px;
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:14px;
+      background:rgba(255,255,255,.055);
+      font-size:13px;
+      font-weight:800;
+      transition:transform .18s ease,background .18s ease,border-color .18s ease;
+    }
+    .action-btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.24);
+      background:rgba(255,255,255,.10);
+    }
+    .action-btn.primary{
+      border-color:transparent;
+      color:#071020;
+      background:linear-gradient(135deg,var(--c),var(--a));
+    }
+    .archive-note{
+      display:flex;
+      align-items:flex-start;
+      gap:9px;
+      margin:16px 0 0;
+      padding:11px 12px;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:14px;
+      color:rgba(234,240,255,.61);
+      background:rgba(255,255,255,.03);
+      font-size:12.5px;
+      line-height:1.55;
+    }
     footer{
       margin-top:auto;
       padding:26px 0 40px;
@@ -241,6 +398,13 @@
       .page{ padding-top:24px; }
       .hero-card{ padding:17px; border-radius:22px; }
       .navlinks{ width:100%; }
+      .announcement-list{ padding-top:16px; }
+      .announcement-card{ padding:17px; border-radius:21px; }
+      .announcement-top{ flex-direction:column; }
+      .announcement-heading{ flex-direction:column; }
+      .announcement-meta{ grid-template-columns:1fr; }
+      .announcement-actions{ flex-direction:column; }
+      .action-btn{ width:100%; }
     }
     @media (prefers-reduced-motion:reduce){
       .navlinks.open{ animation:none; }
@@ -288,7 +452,61 @@
       </p>
     </section>
 
-    <section class="content-space" aria-label="Daftar pengumuman"></section>
+    <section class="announcement-list" aria-label="Daftar pengumuman">
+      <article class="announcement-card">
+        <div class="announcement-top">
+          <div class="announcement-heading">
+            <span class="announcement-icon" aria-hidden="true">
+              <i class="fa-solid fa-user-plus"></i>
+            </span>
+            <div>
+              <p class="eyebrow">Rekrutmen Akademik</p>
+              <h2>Rekrutmen Ko-Assisten Profesor — Penelitian Exact</h2>
+              <p class="summary">
+                Kesempatan bergabung sebagai Ko-Assisten Profesor untuk mendukung kegiatan
+                Penelitian Exact di bawah supervisi <strong>Moh Najikhul Fajri, S.E., M.SE.</strong>
+              </p>
+            </div>
+          </div>
+          <span class="status"><span class="status-dot" aria-hidden="true"></span> Pendaftaran Ditutup</span>
+        </div>
+
+        <div class="announcement-meta" aria-label="Informasi rekrutmen">
+          <div class="meta-item">
+            <span class="meta-label">Posisi</span>
+            <span class="meta-value">Ko-Assisten Profesor</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Supervisor</span>
+            <span class="meta-value">Moh Najikhul Fajri, S.E., M.SE.</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Tenggat Pendaftaran</span>
+            <span class="meta-value">3 Agustus 2025</span>
+          </div>
+        </div>
+
+        <div class="announcement-actions">
+          <a class="action-btn primary"
+             href="https://drive.google.com/file/d/1_X2r1MZIsM-3RZzAIc0rrX5Ju84K9hfG/view?usp=sharing"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fa-solid fa-file-lines"></i> Lihat Detail Ketentuan
+          </a>
+          <a class="action-btn"
+             href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=NQQpA3T_0UWuqhc2dyIc-FAKsXr9FoxGs6sWRbLVU79UNkdENEpZMFlSWUU2MkRCMFNPQVEzMlpJMy4u"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fa-solid fa-pen-to-square"></i> Buka Formulir Pendaftaran
+          </a>
+        </div>
+
+        <p class="archive-note">
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          <span>Pengumuman ini ditampilkan sebagai arsip. Masa pengumpulan berkas dan pengisian formulir telah berakhir pada 3 Agustus 2025.</span>
+        </p>
+      </article>
+    </section>
 
     <footer>© <span id="year"></span> Moh Najikhul Fajri · Announcement</footer>
   </main>
