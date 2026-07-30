@@ -249,6 +249,10 @@
       font-size:12px;
       font-weight:700;
     }
+    .student-list{
+      display:grid;
+      gap:14px;
+    }
     .student-card{
       display:grid;
       grid-template-columns:150px minmax(0,1fr);
@@ -501,10 +505,52 @@
               <p>Mahasiswa yang telah melengkapi profil dan informasi penelitian.</p>
             </div>
           </div>
-          <span class="count-badge"><i class="fa-solid fa-user"></i> 1 mahasiswa</span>
+          <span class="count-badge"><i class="fa-solid fa-users"></i> 2 mahasiswa</span>
         </div>
 
-        <article class="student-card">
+        <div class="student-list">
+          <article class="student-card">
+            <div class="student-photo-ring">
+              <div class="student-photo">
+                <img src="assets/IMG_5159.HEIC"
+                     alt="Foto Andreas Bakara Sitanggang"
+                     width="300"
+                     height="300"
+                     loading="lazy" />
+              </div>
+            </div>
+
+            <div class="student-info">
+              <div class="tag-row" aria-label="Informasi akademik Andreas Bakara Sitanggang">
+                <span class="tag"><i class="fa-solid fa-graduation-cap"></i> S-1 Ekonomi</span>
+                <span class="tag"><i class="fa-solid fa-landmark"></i> Ekonomi Kelembagaan dan Analisis Regional</span>
+                <span class="tag"><i class="fa-solid fa-spinner"></i> Status: On Progress</span>
+                <span class="tag"><i class="fa-solid fa-table-cells"></i> Data: Panel Negara</span>
+                <span class="tag"><i class="fa-regular fa-calendar"></i> Tahun Masuk: 2023</span>
+              </div>
+              <h3>Andreas Bakara Sitanggang</h3>
+              <p class="thesis-title">
+                <strong>Judul skripsi:</strong> Efek Spillover Spasial Kualitas Kelembagaan terhadap
+                Efisiensi Pembangunan Sosioekonomi Berkelanjutan di Asia
+              </p>
+              <div class="social-links" aria-label="Media sosial Andreas Bakara Sitanggang">
+                <a class="social-btn linkedin"
+                   href="https://www.linkedin.com/in/andreassitanggang"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a class="social-btn instagram"
+                   href="https://www.instagram.com/andreas.bs?igsh=dTI0Z2J3eWQwOWY3"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="student-card">
           <div class="student-photo-ring">
             <div class="student-photo">
               <img src="assets/pst01.jpeg"
@@ -543,7 +589,8 @@
               </a>
             </div>
           </div>
-        </article>
+          </article>
+        </div>
       </section>
 
       <div class="empty-grid" aria-label="Kategori pembimbingan lainnya">
